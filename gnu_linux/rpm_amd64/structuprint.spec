@@ -25,6 +25,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/opt/structuprint/
 cp structuprint.pl %{buildroot}/opt/structuprint/
 cp amino_acid_properties.db %{buildroot}/opt/structuprint/
+tar -xzvf R_libs.tar.gz
 cp -R R_libs/* %{buildroot}/opt/structuprint/R_libs/
 cp props.txt %{buildroot}/opt/structuprint/
 
