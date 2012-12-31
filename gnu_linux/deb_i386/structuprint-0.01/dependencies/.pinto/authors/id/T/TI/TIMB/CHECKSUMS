@@ -1,0 +1,11 @@
+# CHECKSUMS file written on Tue Dec 18 18:21:58 2012 GMT by CPAN::Checksums (v2.08)
+$cksum = {
+  'DBI-1.622.tar.gz' => {
+    'md5' => '9836bcf1b9acc842089aa10b16736909',
+    'md5-ungz' => '4f06c1ec4499f842227a58f514d7aba5',
+    'mtime' => '2012-06-06',
+    'sha256' => '6e91c47bf4c8413b6f436d96a62725b837ff76231c8d1aef7527025a7d86013c',
+    'sha256-ungz' => '74c793b2078eea254e5d10c630d88102ea467dea35ceb368b12843a11b58e99a',
+    'size' => 585651
+  }
+};

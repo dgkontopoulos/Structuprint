@@ -1,0 +1,11 @@
+# CHECKSUMS file written on Tue Dec 18 16:31:32 2012 GMT by CPAN::Checksums (v2.08)
+$cksum = {
+  'Statistics-R-0.30.tar.gz' => {
+    'md5' => 'ea39d9e2195b06a507481e08371a30ed',
+    'md5-ungz' => 'a8b6eda2f69e6171d02787a1a2c2f19e',
+    'mtime' => '2012-11-15',
+    'sha256' => '2c97824aefdfe8edcc24b8fd523c26cf95730d9471e3661ed9f15b4d243bf3a8',
+    'sha256-ungz' => '4cda0b293ec42aa9b0df2c5772aecc055181f6fd35013535ed18c11edd9c68b1',
+    'size' => 34926
+  }
+};

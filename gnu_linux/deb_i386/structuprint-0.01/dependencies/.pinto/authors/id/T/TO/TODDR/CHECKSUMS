@@ -1,0 +1,19 @@
+# CHECKSUMS file written on Tue Dec 18 16:31:41 2012 GMT by CPAN::Checksums (v2.08)
+$cksum = {
+  'IO-Tty-1.10.tar.gz' => {
+    'md5' => '46baec86a145e57f0ec661fa412b097c',
+    'md5-ungz' => '5acb447447f1800fcfd90dcff40e19e6',
+    'mtime' => '2010-10-11',
+    'sha256' => '31a6e21ad187ec5ea93c2b898d6b3519647c5fce9f394b6d3c05a1f7c3f6f8b1',
+    'sha256-ungz' => '5fab82eda35e5914dc216393eaf22a6909208f0f958df5def62e5c8081888323',
+    'size' => 23291
+  },
+  'IPC-Run-0.92.tar.gz' => {
+    'md5' => '9d209c8d4bda50bea5f5a09e03db173e',
+    'md5-ungz' => 'a65cd4e99d9f0effc817fbd09a7f8d9b',
+    'mtime' => '2012-08-30',
+    'sha256' => 'e186b46ddf1577d24f11eec1ba42285963c3f71ec7ecb1ce51d6e88c729d46d2',
+    'sha256-ungz' => 'ba5e4014e209ffbdb0b7c54a77309ba465f58a182f86682c430dd2840cddd2c7',
+    'size' => 121532
+  }
+};

@@ -1,0 +1,11 @@
+# CHECKSUMS file written on Tue Dec 18 18:22:18 2012 GMT by CPAN::Checksums (v2.08)
+$cksum = {
+  'DBD-SQLite2-0.33.tar.gz' => {
+    'md5' => 'babd83fd5eb9ba7560ad4bab4c76c0eb',
+    'md5-ungz' => '97984d643fb9e66a553bc22cc8c3f81d',
+    'mtime' => '2004-09-10',
+    'sha256' => 'a2b493916adc76bd152916c0d9a28ef41cd251e5ba88b43ce3e9a5789b44e6b4',
+    'sha256-ungz' => '6d1cfb387d5e1eab2f667746d9e1aa64947a3bd15d77aa6f1ae956cc247c380d',
+    'size' => 363277
+  }
+};

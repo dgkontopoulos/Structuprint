@@ -1,0 +1,17 @@
+Package: labeling
+Type: Package
+Title: Axis Labeling
+Version: 0.1
+Date: 2010-09-02
+Author: Justin Talbot
+Maintainer: Justin Talbot <jtalbot@stanford.edu>
+Description: Provides a range of axis labeling algorithms
+License: Unlimited
+LazyLoad: no
+Collate: 'labeling.R'
+Repository: CRAN
+Repository/R-Forge/Project: labeling
+Repository/R-Forge/Revision: 8
+Date/Publication: 2012-10-29 08:59:04
+Packaged: 2012-10-29 08:59:04 UTC; ripley
+Built: R 2.14.1; ; 2012-12-20 09:29:25 UTC; unix

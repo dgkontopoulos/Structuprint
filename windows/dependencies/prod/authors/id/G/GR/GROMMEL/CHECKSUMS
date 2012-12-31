@@ -1,0 +1,11 @@
+# CHECKSUMS file written on Thu Dec 20 23:24:15 2012 GMT by CPAN::Checksums (v2.08)
+$cksum = {
+  'Math-Round-0.06.tar.gz' => {
+    'md5' => '552cef2753b246f97a6e20d8dee66e7c',
+    'md5-ungz' => '180bbf85f807146e231445133616ca25',
+    'mtime' => '2006-11-30',
+    'sha256' => 'a5086f7693ac49a9bdcdc9cccff9159be527d150951319c061bfb2e0dedb8da4',
+    'sha256-ungz' => 'b0ed4f2b002f16f372a43accce72f6d79f67bd949eebde1e702f7f67ed8e766e',
+    'size' => 5002
+  }
+};

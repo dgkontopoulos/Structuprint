@@ -1,0 +1,11 @@
+# CHECKSUMS file written on Tue Dec 18 16:31:39 2012 GMT by CPAN::Checksums (v2.08)
+$cksum = {
+  'Regexp-Common-2011121001.tar.gz' => {
+    'md5' => '9e6a8fed514017589f44cde02b947ac5',
+    'md5-ungz' => '4fc76b9310b32eddf761a0ccd6822fff',
+    'mtime' => '2011-12-10',
+    'sha256' => '0bf9c2f40c64c05889f7bc16922bb01ca737410180949e088d6974e739e06b39',
+    'sha256-ungz' => '053216d7aa4c99155fddc2b1b7bc84da590600384ecbf6ce790df9fe06ad9926',
+    'size' => 114141
+  }
+};
