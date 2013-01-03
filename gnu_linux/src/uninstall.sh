@@ -7,5 +7,6 @@ fi
 
 rm -rf /opt/structuprint/ || exit;
 rm /usr/bin/structuprint || exit;
+rm /usr/bin/structuprint_frame || exit;
 
 echo "\033[1mStructuprint was successfully uninstalled.\033[0m"

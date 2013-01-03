@@ -2,9 +2,9 @@
 
 for arg in "$@"
 do
-	if [ -z "$arguments" ]; then arguments="${arg} ";
-	else arguments="${arguments}${arg} ";
-    fi
+  if [ -z "$arguments" ]; then arguments="${arg} ";
+  else arguments="${arguments}${arg} ";
+  fi
 done
 
 /opt/structuprint/structuprint.pl $arguments
