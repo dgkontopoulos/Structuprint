@@ -1,7 +1,8 @@
 INSTALLDIR=$(DESTDIR)/opt/structuprint
 
-Scripts: structuprint.pl
+Scripts: structuprint.pl structuprint_frame.pl
 	chmod 755 structuprint.pl
+	chmod 755 structuprint_frame.pl
 
 install:
 	mkdir -p $(INSTALLDIR)
@@ -23,7 +24,10 @@ install:
 	mkdir -p $(DESTDIR)/usr/bin/
 	cp structuprint $(DESTDIR)/usr/bin/
 	chmod +x $(DESTDIR)/usr/bin/structuprint
+	cp structuprint_frame $(DESTDIR)/usr/bin/
+	chmod +x $(DESTDIR)/usr/bin/structuprint_frame
 		
 uninstall:
 	rm -rf $(INSTALLDIR)
 	rm -rf $(DESTDIR)/usr/bin/structuprint
+	rm -rf $(DESTDIR)/usr/bin/structuprint_frame

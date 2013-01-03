@@ -32,6 +32,8 @@ cp props.txt %{buildroot}/opt/structuprint/
 mkdir -p %{buildroot}/usr/bin/
 cp structuprint %{buildroot}/usr/bin/
 chmod +x %{buildroot}/usr/bin/structuprint
+cp structuprint_frame %{buildroot}/usr/bin/
+chmod +x %{buildroot}/usr/bin/structuprint_frame
 
 mkdir -p %{buildroot}/tmp/structuprint/
 mkdir -p %{buildroot}/usr/
@@ -53,6 +55,7 @@ rm -rf %{buildroot}/usr/bin/structuprint
 
 %files
 /usr/bin/structuprint
+/usr/bin/structuprint_frame
 /opt/structuprint/*
 /usr/lib/perl/5.14/perllocal.pod
 /usr/lib/perl5/Astro/MapProjection.pm
