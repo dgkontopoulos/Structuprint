@@ -7,7 +7,7 @@ Standards-Version: 3.9.3
 
 Package: structuprint
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, perl, r-base-core, r-cran-ggplot2, libfile-spec-perl, libdbi-perl, libdbd-sqlite3-perl, libmath-round-perl, libstatistics-r-perl
+Depends: ${shlibs:Depends}, ${misc:Depends}, perl, r-base-core, libfile-spec-perl, libdbi-perl, libdbd-sqlite3-perl, libmath-round-perl, libstatistics-r-perl
 Description: Command line tool for 2D surface plotting of PDB structures
  Structuprint is a command line tool for 2D surface
  plotting of PDB structures. Its output can be a single

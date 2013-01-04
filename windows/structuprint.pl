@@ -82,7 +82,7 @@ my $property = $ARGV[1];
 my $files_number = scalar @{$files};
 
 my $files_counter = 1;
-my $average_time  = 0;
+my $average_time;
 my $last_time     = 0;
 system "mkdir " . '"' . $directory . 'final_output"';
 foreach ( @{$files} )

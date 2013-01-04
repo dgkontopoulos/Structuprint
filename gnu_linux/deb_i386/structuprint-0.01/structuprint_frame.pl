@@ -2,7 +2,7 @@
 
 =head1 USAGE
 
-./structuprint_frame.pl directory
+./structuprint_frame.pl directory property
 
 =head1 DEPENDENCIES
 
@@ -43,7 +43,7 @@ if ( $ARGV[0] && $ARGV[0] eq '-prop' )
 }
 else
 {
-	my @properties = @{ amino_acid_properties() };
+    my @properties = @{ amino_acid_properties() };
 
     #Check the number of arguments/flags.#
     @ARGV == 2
@@ -172,7 +172,7 @@ sub dummy_atoms
 
     my $atom_number = 1;
     open my $fh, '>', $resulting_file || die "Cannot create $resulting_file.\n";
-    foreach my $key ( keys $grid )
+    foreach my $key ( keys %$grid )
     {
         if ( $grid->{$key} == 0 )
         {
@@ -457,7 +457,7 @@ sub map_projection
     my $min_x = 500;
 
     #Iterate through the sphere data.#
-    foreach my $key ( keys $maphash )
+    foreach my $key ( keys %$maphash )
     {
         if ( $maphash->{$key} == 1 )
         {
@@ -694,8 +694,8 @@ sub plot_fingerprint
     $R->set( 'property',    $ARGV[1] );
 
     my $R_commands = << 'END';
-	library("ggplot2")
-	ending <- "fingerprint.png"
+	library("ggplot2", lib.loc="/opt/structuprint/R_libs")
+	ending <- "structuprint.png"
 	name <- paste(directory, ending, sep = "")
 	png(filename = name, width = 1700, height = 1700, units = "px", bg = "black")
 	
@@ -940,7 +940,7 @@ sub sphere
     my $atom_counter = 0;
 
     #Find the center of mass.#
-    foreach my $key ( keys $grid )
+    foreach my $key ( keys %$grid )
     {
         if ( $grid->{$key} == 0 )
         {
@@ -964,7 +964,7 @@ sub sphere
 
     #Compute the distance of each atom from the center of mass.#
     my %distance;
-    foreach my $key ( keys $grid )
+    foreach my $key ( keys %$grid )
     {
         if ( $grid->{$key} == 0 )
         {
@@ -1018,7 +1018,7 @@ sub sphere
 
     my %map_hash;
 
-    foreach my $key ( keys $grid )
+    foreach my $key ( keys %$grid )
     {
         if ( $grid->{$key} == 0 )
         {
@@ -1140,12 +1140,16 @@ sub standing_out_areas
     my $positive_locations = unite_nearby( \@positive_locations );
     my $negative_locations = unite_nearby( \@negative_locations );
 
-    say 'Areas worth noting:';
+    my $output_file = $input_file;
+    $output_file =~ s/miller2/areas_worth_noting.txt/;
+
+    open my $out_fh, '>', $output_file or die $!;
+    say {$out_fh} 'Areas worth noting:';
     foreach ( @{$positive_locations} )
     {
         if ($_)
         {
-            say $_;
+            say {$out_fh} $_;
         }
     }
 
@@ -1153,9 +1157,10 @@ sub standing_out_areas
     {
         if ($_)
         {
-            say $_;
+            say {$out_fh} $_;
         }
     }
+    close $out_fh;
     return 0;
 }
 

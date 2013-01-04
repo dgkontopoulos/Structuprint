@@ -13,6 +13,14 @@ then
 fi
 echo "OK"
 
+echo -n "Checking for Perl version >= v5.10... "
+if !((perl -e 'use feature qw(say);') > /dev/null);
+then
+  echo "\033[1mERROR!\n\nThe currently installed version of Perl is older than 5.10. Please install Perl 5.10 or some later version.\033[0m"
+  exit 1
+fi
+echo "OK"
+
 echo -n "Checking for Astro::MapProjection... "
 if !((perl -e 'use Astro::MapProjection') > /dev/null);
 then
@@ -86,17 +94,33 @@ fi
 echo "OK"
 
 echo -n "Checking for Statistics::R... "
-if !((perl -e 'use Statistics::R') > /dev/null);
+if !((perl -e 'use Statistics::R')) > /dev/null;
 then
   echo "\033[1mERROR!\n\nStatistics::R is not installed! Install it from CPAN:\nhttp://search.cpan.org/~fangly/Statistics-R-0.30/lib/Statistics/R.pm\033[0m"
   exit 1
 fi
 echo "OK"
 
-echo -n "Checking for ggplot2... "
-if !((./install_t/ggplot2.R) > /dev/null);
+echo -n "Checking for ggplot2 >= v0.9.3... "
+if [ `perl ./install_t/ggplot2.pl` -eq "1" ];
 then
-  echo "\033[1mERROR!\n\nggplot2 is not installed! Install it from CRAN:\nhttp://cran.r-project.org/web/packages/ggplot2/index.html\033[0m"
+  echo "\033[1mERROR!\n\nggplot2 v0.9.3 or later is not installed! Install it from CRAN:\nhttp://cran.r-project.org/web/packages/ggplot2/index.html\033[0m"
+  exit 1
+fi
+echo "OK"
+
+echo -n "Checking for ImageMagick... "
+if !((which convert) > /dev/null);
+then
+  echo "\033[1mERROR!\n\nImageMagick is not installed! Please install ImageMagick.\033[0m"
+  exit 1
+fi
+echo "OK"
+
+echo -n "Checking for Gifsicle... "
+if !((which gifsicle) > /dev/null);
+then
+  echo "\033[1mERROR!\n\nGifsicle is not installed! Please install Gifsicle.\033[0m"
   exit 1
 fi
 echo "OK"
@@ -122,5 +146,5 @@ cp ./structuprint /usr/bin/structuprint
 chmod 755 ./structuprint_frame
 cp ./structuprint_frame /usr/bin/structuprint_frame
 
-echo "\033[1mStructuprint was successfully installed at '/opt/structuprint'!"
+echo "\033[1mStructuprint was successfully installed at '/opt/structuprint/'!"
 echo "Launch it with 'structuprint' or 'structuprint_frame'.\033[0m"

@@ -16,12 +16,17 @@ install:
 	dpkg -x DEBS/libbio-pdb-structure-perl_0.02-1_all.deb $(DESTDIR)/tmp/structuprint/
 	cp -R $(DESTDIR)/tmp/structuprint/usr/* $(DESTDIR)/usr/
 	rm -rf $(DESTDIR)/tmp/structuprint/
-	
+
 	mkdir -p $(DESTDIR)/tmp/structuprint/
 	dpkg -x DEBS/libastro-mapprojection-perl_0.01-1_amd64.deb $(DESTDIR)/tmp/structuprint/
 	cp -R $(DESTDIR)/tmp/structuprint/usr/* $(DESTDIR)/usr/
 	rm -rf $(DESTDIR)/tmp/
 	
+	tar -xzvf R_libs.tar.gz
+	mkdir -p $(INSTALLDIR)/R_libs/
+	cp -R R_libs/* $(INSTALLDIR)/R_libs/
+	rm -rf R_libs/
+
 	mkdir -p $(DESTDIR)/usr/bin/
 	cp structuprint $(DESTDIR)/usr/bin/
 	chmod +x $(DESTDIR)/usr/bin/structuprint
