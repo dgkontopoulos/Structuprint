@@ -94,7 +94,7 @@ fi
 echo "OK"
 
 echo -n "Checking for Statistics::R... "
-if !((perl -e 'use Statistics::R')) > /dev/null;
+if !((perl -e 'use Statistics::R') > /dev/null);
 then
   echo "\033[1mERROR!\n\nStatistics::R is not installed! Install it from CPAN:\nhttp://search.cpan.org/~fangly/Statistics-R-0.30/lib/Statistics/R.pm\033[0m"
   exit 1
@@ -145,6 +145,9 @@ cp ./structuprint /usr/bin/structuprint
 
 chmod 755 ./structuprint_frame
 cp ./structuprint_frame /usr/bin/structuprint_frame
+
+chmod 755 ./uninstall.sh
+cp ./uninstall.sh /opt/structuprint/
 
 echo "\033[1mStructuprint was successfully installed at '/opt/structuprint/'!"
 echo "Launch it with 'structuprint' or 'structuprint_frame'.\033[0m"
