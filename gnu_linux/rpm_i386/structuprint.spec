@@ -1,4 +1,4 @@
-Summary:	Command line tool for 2D surface plotting of PDB structures
+Summary:	Command line tool for 2D surface graphing of PDB structures
 Name:		structuprint
 Version:	0.01
 Release:	1%{?dist}
@@ -10,7 +10,7 @@ buildroot:	/opt/structuprint/
 
 %description
 Structuprint is a command line tool for 2D surface
-plotting of PDB structures. Its output can be a single
+graphing of PDB structures. Its output can be a single
 PNG frame or a full-blown GIF animation consisting of
 tens of frames.
 
@@ -26,7 +26,7 @@ mkdir -p %{buildroot}/opt/structuprint/R_libs/
 cp structuprint.pl %{buildroot}/opt/structuprint/
 cp amino_acid_properties.db %{buildroot}/opt/structuprint/
 tar -xzvf R_libs.tar.gz
-cp -R R_libs/* %{buildroot}/opt/structuprint/R_libs/
+cp -R R_libs/ %{buildroot}/opt/structuprint/R_libs/
 cp props.txt %{buildroot}/opt/structuprint/
 
 mkdir -p %{buildroot}/usr/bin/
