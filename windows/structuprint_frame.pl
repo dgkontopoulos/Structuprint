@@ -1,20 +1,58 @@
 #!/usr/bin/env perl
 
-=head1 USAGE
+=head1 NAME
 
-./structuprint_frame.pl directory property
+structuprint_frame
+
+=head1 SYNOPSIS
+
+structuprint_frame.pl directory property
+
+=head1 DESCRIPTION
+
+structuprint_frame is a tool for creating single 'structuprints' 
+from PDB structures. Refer to structuprint's main documentation 
+for more details.
+
+=head1 OPTIONS
+
+=head2 -prop
+
+Display the list of available amino acid properties to choose from.
 
 =head1 DEPENDENCIES
 
 -the Perl interpreter, >= 5.10
 -Astro::MapProjection, >= 0.01 (Perl module)
 -Bio::PDB::Structure, >= 0.01 (Perl module)
+-DBD::SQLite, >= 1.37 (Perl module)
+-DBI, >= 1.622 (Perl module)
 -File::Spec, >= 3.33 (Perl module)
 -List::Util, >= 1.25 (Perl module)
 -Math::Round, >= 0.06 (Perl module)
 -Statistics::R, >= 0.30 (Perl module)
 -the R interpreter, >= 2.15.1
 -ggplot2, >= 0.9.3 (R package)
+
+=head1 AUTHOR
+
+Dimitrios - Georgios Kontopoulos
+<dgkontopoulos@gmail.com>
+
+=head1 LICENSE
+
+This program is free software: you can redistribute it 
+and/or modify it under the terms of the GNU General 
+Public License as published by the Free Software 
+Foundation, either version 2 of the License, or (at your 
+option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+For more information, see http://www.gnu.org/licenses/.
 
 =cut
 
@@ -254,126 +292,6 @@ sub grouping_grid
     {
         $elements += $counter{$key};
         $element_counter++;
-
-        #if ( $counter{$key} >= 10 )
-        #{
-
-        ##my ( @neg_vals, @zeros, @pos_vals );
-        ##while ( $values{$key} =~ /\d+/ )
-        ##{
-        ##if ( $values{$key} =~ /\s?(\d+[.]?\d*)\s?/ )
-        ##{
-        ##if ( $1 > 0.5 )
-        ##{
-        ##push @pos_vals, $1;
-        ##}
-        ##elsif ( $1 < -0.5 )
-        ##{
-        ##push @neg_vals, $1;
-        ##}
-        ##else
-        ##{
-        ##push @zeros, $1;
-        ##}
-        ##$values{$key} = $';
-        ##}
-        ##}
-
-        ##my $biggest_length = max($#pos_vals, $#neg_vals, $#zeros);
-
-        ##my @friedman_array;
-        ##for ( 0 .. $biggest_length )
-        ##{
-        ##if ( defined $neg_vals[$_] )
-        ##{
-        ##push @friedman_array, $neg_vals[$_];
-        ##}
-        ##else
-        ##{
-        ##push @friedman_array, 'NA';
-        ##}
-
-        ##if ( defined $zeros[$_] )
-        ##{
-        ##push @friedman_array, $zeros[$_];
-        ##}
-        ##else
-        ##{
-        ##push @friedman_array, 'NA';
-        ##}
-
-        ##if ( defined $pos_vals[$_] )
-        ##{
-        ##push @friedman_array, $pos_vals[$_];
-        ##}
-        ##else
-        ##{
-        ##push @friedman_array, 'NA';
-        ##}
-        ##}
-
-        ##if ( ( $biggest_length + 1 ) > 1 )
-        ##{
-        ##$biggest_length += 1;
-        ##$R->set( 'dataset', \@friedman_array );
-        ##$R->set( 'row_numbers', $biggest_length);
-        ##my $R_commands = << 'END';
-        ##friedman_matrix <- matrix(dataset, nrow = row_numbers, byrow = TRUE)
-        ##friedman_p <- friedman.test(friedman_matrix)$p.val
-        ##if ( friedman_p <= 0.05 )
-        ##{
-        ##data_val <- mean(dataset)
-        ##} else
-        ##{
-        ##data_val <- 'NA'
-        ##}
-        ##END
-        ##$R->run($R_commands);
-        ##my $output = $R->get('data_val');
-        ##if ( $output ne 'NA' )
-        ##{
-        ##$grid_weights{$key} = $output;
-        ##}
-        ##}
-        #my ( @true_vals, @zeros );
-        #while ( $values{$key} =~ /\d+/ )
-        #{
-        #if ( $values{$key} =~ /\s?(\d+[.]?\d*)\s?/ )
-        #{
-        #if ( $1 > 0.5 || $1 < -0.5 )
-        #{
-        #push @true_vals, $1;
-        #}
-        #else
-        #{
-        #push @zeros, abs $1;
-        #}
-        #$values{$key} = $';
-        #}
-        #}
-        #if ( $#true_vals >= 5 )
-        #{
-        #$R->set( 'dataset_1', \@true_vals );
-        #$R->set( 'dataset_2', \@zeros );
-
-        #my $R_commands = << 'END';
-        #wilcox_p <- wilcox.test(dataset_1, dataset_2)$p.val
-        #if (wilcox_p <= 0.05 )
-        #{
-        #data_val <- mean(dataset_1)
-        #} else
-        #{
-        #data_val <- 'NA'
-        #}
-        #END
-        #$R->run($R_commands);
-        #my $output = $R->get('data_val');
-        #if ( $output ne 'NA' )
-        #{
-        #$grid_weights{$key} = $output;
-        #}
-        #}
-        #}
     }
     $elements /= $element_counter;
 
