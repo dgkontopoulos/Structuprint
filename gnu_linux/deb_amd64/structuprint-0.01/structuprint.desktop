@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/opt/structuprint/structuprint_gui.pl
+Name=Structuprint
+Comment=Structuprint, a utility for analysis of MD simulations and of single PDB structures.
+Icon=/opt/structuprint/images/logo.png
+Categories=Science;
+StartupWMClass=Structuprint_gui.pl
