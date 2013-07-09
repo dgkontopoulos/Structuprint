@@ -7,7 +7,7 @@ my $test_output = `Rscript install_t/ggplot2.R`;
 
 my $current_version;
 my @current_version;
-if ( $test_output =~ /‘(\d)[.](\d)[.](\d)’/ )
+if ( $test_output =~ /‘(\d)[.](\d)[.](\d)/ )
 {
     $current_version = "$1.$2.$3";
     push @current_version, $1;

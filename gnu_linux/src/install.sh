@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! [ $(id -u) = 0 ]; then
   echo "You must be root to do this."
@@ -69,6 +69,14 @@ then
 fi
 echo "OK"
 
+echo -n "Checking for Gtk2... "
+if !((perl -e 'use Gtk2') > /dev/null);
+then
+  echo -e "\033[1mERROR!\n\nGtk2 is not installed! Install it from CPAN:\nhttp://search.cpan.org/~xaoc/Gtk2-1.247/lib/Gtk2.pm\033[0m"
+  exit 1
+fi
+echo "OK"
+
 echo -n "Checking for List::Util... "
 if !((perl -e 'use List::Util') > /dev/null);
 then
@@ -125,15 +133,29 @@ then
 fi
 echo "OK"
 
+echo -n "Checking for xterm... "
+if !((which xterm) > /dev/null);
+then
+  echo -e "\033[1mERROR!\n\nxterm is not installed! Please install xterm.\033[0m"
+  exit 1
+fi
+echo "OK"
+
 echo ""
 
-mkdir -p /opt/structuprint/
+mkdir -p /opt/structuprint/images/
+
+cp ./images/* /opt/structuprint/images/
+cp ./codebook.pdf /opt/structuprint/
 
 chmod 755 ./structuprint.pl
 cp ./structuprint.pl /opt/structuprint/
 
 chmod 755 ./structuprint_frame.pl
 cp ./structuprint_frame.pl /opt/structuprint/
+
+chmod 755 ./structuprint_gui.pl
+cp ./structuprint_gui.pl /opt/structuprint/
 
 cp amino_acid_properties.db /opt/structuprint/
 
@@ -148,6 +170,8 @@ cp ./structuprint_frame /usr/bin/structuprint_frame
 
 chmod 755 ./uninstall.sh
 cp ./uninstall.sh /opt/structuprint/
+
+cp ./structuprint.desktop /usr/share/applications/
 
 echo -e "\033[1mStructuprint was successfully installed at '/opt/structuprint/'!"
 echo -e "Launch it with 'structuprint' or 'structuprint_frame'.\033[0m"
