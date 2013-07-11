@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel='icon' href='./images/structuprint.ico' type='image/x-icon'>
+    <link rel='shortcut_icon' href='./images/structuprint.ico' type='image/x-icon'> 
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,7 +21,7 @@
   <body>
     <header>
       <div class="inner">
-        <h1>Structuprint</h1>
+        <h1>Structuprint <img src="./images/logo.png" align = "right"></h1>
         <h2>A utility for analysis of MD simulations (and single PDB files as well), offering a novel 2D visualisation technique.</h2>
         <a href="https://github.com/dgkontopoulos/Structuprint" class="button"><small>View project on</small>GitHub</a>
       </div>
@@ -31,7 +33,7 @@
           <h2>
 <a name="name" class="anchor" href="#name"><span class="octicon octicon-link"></span></a>NAME</h2>
 
-<p><strong>Structuprint</strong></p>
+<p><strong><b>Structuprint</b></strong></p>
 
 <h2>
 <a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>DESCRIPTION</h2>
@@ -43,37 +45,37 @@ input.</p>
 <h2>
 <a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>DEPENDENCIES</h2>
 
-<p>-the Perl interpreter, &gt;= 5.10</p>
+<p>-the <b>Perl</b> interpreter, &gt;= 5.10</p>
 
-<p>-Astro::MapProjection, &gt;= 0.01 (Perl module)</p>
+<p>-<b>Astro::MapProjection</b>, &gt;= 0.01 (Perl module)</p>
 
-<p>-Bio::PDB::Structure, &gt;= 0.01 (Perl module)</p>
+<p>-<b>Bio::PDB::Structure</b>, &gt;= 0.01 (Perl module)</p>
 
-<p>-DBD::SQLite, &gt;= 1.37 (Perl module)</p>
+<p>-<b>DBD::SQLite</b>, &gt;= 1.37 (Perl module)</p>
 
-<p>-DBI, &gt;= 1.622 (Perl module)</p>
+<p>-<b>DBI</b>, &gt;= 1.622 (Perl module)</p>
 
-<p>-File::Spec, &gt;= 3.33 (Perl module)</p>
+<p>-<b>File::Spec</b>, &gt;= 3.33 (Perl module)</p>
 
-<p>-File::Copy, &gt;= 2.18 (Perl module)</p>
+<p>-<b>File::Copy</b>, &gt;= 2.18 (Perl module)</p>
 
-<p>-Gtk2, &gt;= 1.247 (Perl module) [__for GNU/Linux only__]</p>
+<p>-<b>Gtk2</b>, &gt;= 1.247 (Perl module) <b>[for GNU/Linux only]</b></p>
 
-<p>-List::Util, &gt;= 1.25 (Perl module)</p>
+<p>-<b>List::Util</b>, &gt;= 1.25 (Perl module)</p>
 
-<p>-Math::Round, &gt;= 0.06 (Perl module)</p>
+<p>-<b>Math::Round</b>, &gt;= 0.06 (Perl module)</p>
 
-<p>-Statistics::R, &gt;= 0.30 (Perl module)</p>
+<p>-<b>Statistics::R</b>, &gt;= 0.30 (Perl module)</p>
 
-<p>-the R interpreter, &gt;= 2.15.1</p>
+<p>-the <b>R</b> interpreter, &gt;= 2.15.1</p>
 
-<p>-ggplot2, &gt;= 0.9.3 (R package)</p>
+<p>-<b>ggplot2</b>, &gt;= 0.9.3 (R package)</p>
 
-<p>-ImageMagick</p>
+<p>-<b>ImageMagick</b></p>
 
-<p>-Gifsicle</p>
+<p>-<b>Gifsicle</b></p>
 
-<p>-xterm</p>
+<p>-<b>xterm [for GNU/Linux only]</b></p>
 
 <h2>
 <a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>AUTHORS</h2>
@@ -112,16 +114,60 @@ GNU General Public License for more details.</p>
         </section>
 
         <aside id="sidebar">
+		  <img src="./images/linux.png"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/debian.png">&nbsp;&nbsp;<img src="./images/ubuntu.png">&nbsp;&nbsp;<img src="./images/linux_mint.png">
           <a href="https://github.com/dgkontopoulos/Structuprint/zipball/master" class="button">
             <small>Download</small>
-            .zip file
+            .deb (32 bit)
           </a>
           <a href="https://github.com/dgkontopoulos/Structuprint/tarball/master" class="button">
             <small>Download</small>
-            .tar.gz file
+            .deb (64 bit)
           </a>
-
-          <p class="repo-owner"><a href="https://github.com/dgkontopoulos/Structuprint"></a> is maintained by <a href="https://github.com/dgkontopoulos">dgkontopoulos</a>.</p>
+          For <b>Debian 7</b>, <b>Ubuntu 13.04</b>, <b>Linux Mint 15</b>.
+          <hr/>
+		  <img src="./images/linux.png"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/fedora.png">
+		  <a href="https://github.com/dgkontopoulos/Structuprint/zipball/master" class="button">
+            <small>Download</small>
+            .rpm (32 bit)
+          </a>
+          <a href="https://github.com/dgkontopoulos/Structuprint/tarball/master" class="button">
+            <small>Download</small>
+            .rpm (64 bit)
+          </a>
+          For <b>Fedora 19</b>.
+          <hr/>
+          <img src="./images/linux.png">
+          <a href="https://github.com/dgkontopoulos/Structuprint/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz
+          </a>
+          For other GNU/Linux distributions.
+          <hr/>
+          
+          <img src="./images/bsd.png">
+          <a href="https://github.com/dgkontopoulos/Structuprint/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz
+          </a>
+          For BSD systems.
+          <hr/>
+          
+          <img src="./images/osx.png">
+          <a href="https://github.com/dgkontopoulos/Structuprint/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz
+          </a>
+          For OS X systems.
+          <hr/>
+          
+          <img src="./images/windows.png">
+          <a href="https://github.com/dgkontopoulos/Structuprint/tarball/master" class="button">
+            <small>Download</small>
+            setup.exe
+          </a>
+          For Windows systems.
+          <br><br><br>
+          <p class="repo-owner"><a href="https://github.com/dgkontopoulos/Structuprint">Structuprint</a> is maintained by <a href="https://github.com/dgkontopoulos">dgkontopoulos</a>.</p>
 
           <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
