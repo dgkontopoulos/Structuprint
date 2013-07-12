@@ -12,6 +12,7 @@ install:
 	cp structuprint_gui.pl $(INSTALLDIR)/
 	cp amino_acid_properties.db $(INSTALLDIR)/
 	cp props.txt $(INSTALLDIR)/
+	cp codebook.pdf $(INSTALLDIR)/
 	cp images/* $(INSTALLDIR)/images/
 	
 	mkdir -p $(DESTDIR)/usr/share/applications/
@@ -27,6 +28,11 @@ install:
 	cp -R $(DESTDIR)/tmp/structuprint/usr/* $(DESTDIR)/usr/
 	rm -rf $(DESTDIR)/tmp/
 	
+	tar -xzvf R_libs.tar.gz
+	mkdir -p $(INSTALLDIR)/R_libs/
+	cp -R R_libs/* $(INSTALLDIR)/R_libs/
+	rm -rf R_libs/
+
 	mkdir -p $(DESTDIR)/usr/bin/
 	cp structuprint $(DESTDIR)/usr/bin/
 	chmod +x $(DESTDIR)/usr/bin/structuprint

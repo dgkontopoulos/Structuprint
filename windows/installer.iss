@@ -33,6 +33,7 @@ Source: "C:\Users\D. - G. Kontopoulos\Documents\My Dropbox\structuprint\windows\
 Source: "C:\Users\D. - G. Kontopoulos\Documents\My Dropbox\structuprint\windows\ImageMagick\*"; DestDir: "{app}\ImageMagick\"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\D. - G. Kontopoulos\Documents\My Dropbox\structuprint\windows\amino_acid_properties.db"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\D. - G. Kontopoulos\Documents\My Dropbox\structuprint\windows\props.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\D. - G. Kontopoulos\Documents\My Dropbox\structuprint\windows\codebook.pdf"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

@@ -138,6 +138,7 @@ cp ./structuprint_frame.pl /opt/structuprint/
 cp amino_acid_properties.db /opt/structuprint/
 
 cp props.txt /opt/structuprint/
+cp codebook.pdf /opt/structuprint/
 
 mkdir -p /usr/bin/
 chmod 755 ./structuprint

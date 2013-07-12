@@ -123,7 +123,7 @@ system "mkdir " . '"' . $directory . 'final_output"';
 foreach ( @{$files} )
 {
     print "-> File $files_counter/$files_number ...";
-    if ( $files_counter >= $files_number * 0.7 )
+    if ( $files_counter >= $files_number * 0.7 && @{$files} > 1 )
     {
         say " ||| Estimated remaining time: "
           . time_formatter(

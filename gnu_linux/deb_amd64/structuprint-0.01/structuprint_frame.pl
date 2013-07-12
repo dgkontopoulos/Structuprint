@@ -612,7 +612,7 @@ sub plot_fingerprint
     $R->set( 'property',    $ARGV[1] );
 
     my $R_commands = << 'END';
-	library("ggplot2")
+	library("ggplot2", lib.loc="/opt/structuprint/R_libs/")
 	library("grid")
 	ending <- "structuprint.png"
 	name <- paste(directory, ending, sep = "")

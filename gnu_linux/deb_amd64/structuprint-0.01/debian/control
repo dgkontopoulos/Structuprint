@@ -7,9 +7,9 @@ Standards-Version: 3.9.3
 
 Package: structuprint
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},  ${perl:Depends}, perl, r-base-core, libfile-spec-perl, libdbi-perl, libdbd-sqlite3-perl, libgtk2-perl, libmath-round-perl, libstatistics-r-perl, xterm, r-cran-ggplot2
-Description: Utility for 2d visualisation of PDB structures.
+Depends: ${shlibs:Depends}, ${misc:Depends},  ${perl:Depends}, perl, r-base-core, libfile-spec-perl, libdbi-perl, libdbd-sqlite3-perl, libgtk2-perl, libmath-round-perl, libstatistics-r-perl, imagemagick, gifsicle, xterm
+Description: Utility for 2D visualisation of PDB structures.
  Structuprint is a utility for analysis of MD simulations
- -and single PDB structures as well-, offering a novel 2D
+ (and single PDB structures as well), offering a novel 2D
  visualisation technique. Its output may be a single frame
  or a full-blown animation, depending on input.

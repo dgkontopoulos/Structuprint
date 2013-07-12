@@ -1,4 +1,5 @@
 structuprint (1.00-0) stable; urgency=low
+
   * Added a GUI version.
 
  -- Dimitrios - Georgios Kontopoulos <dgkontopoulos@gmail.com>  Tue, 10 Jul 2013 00:00:00 +0200
