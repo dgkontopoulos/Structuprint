@@ -706,7 +706,7 @@ sub select_directory
 {
     my ( undef, $output_entry ) = @_;
     my $output_dir;
-    my $filechooser = Gtk2::FileChooserDialog->new( 'Select Output Directory',
+    my $filechooser = Gtk2::FileChooserDialog->new( 'Select Directory',
         $window, 'select-folder', 'gtk-cancel', 'cancel', 'gtk-open',
         'accept' );
 

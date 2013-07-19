@@ -7,7 +7,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{10911A4B-6305-4F21-ACAA-C5C1B8D52970}
 AppName=structuprint
-AppVersion=0.01
+AppVersion=1.01
 ;AppVerName=structuprint 0.01
 ChangesEnvironment=yes
 DefaultDirName={pf}\structuprint
@@ -15,7 +15,7 @@ DisableDirPage=yes
 DefaultGroupName=structuprint
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\D. - G. Kontopoulos\Documents\My Dropbox\structuprint\windows\license.txt
-OutputBaseFilename=structuprint-0.01_setup
+OutputBaseFilename=structuprint-1.01_setup
 Compression=lzma
 SolidCompression=yes
 

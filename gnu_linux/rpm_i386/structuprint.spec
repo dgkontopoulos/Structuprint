@@ -1,10 +1,10 @@
 Summary:	Utility for 2D visualisation of PDB structures
 Name:		structuprint
-Version:	0.01
+Version:	1.01
 Release:	1%{?dist}
 License:	GPLv2+
 Group:		Applications/Science
-Source:		structuprint-0.01.tar.gz
+Source:		structuprint-1.01.tar.gz
 Requires:	perl, perl-DBI, perl-DBD-SQLite, perl-Gtk2, perl-Math-Round, perl-PathTools, perl-IPC-Run, perl-Scalar-List-Utils, perl-Regexp-Common, R, ImageMagick, gifsicle, xterm
 buildroot:	/opt/structuprint/
 
@@ -33,6 +33,7 @@ tar -xzvf R_libs.tar.gz
 cp -R R_libs/* %{buildroot}/opt/structuprint/R_libs/
 cp props.txt %{buildroot}/opt/structuprint/
 cp codebook.pdf %{buildroot}/opt/structuprint/
+mkdir -p %{buildroot}/opt/structuprint/images/
 cp -R images/* %{buildroot}/opt/structuprint/images/
 
 mkdir -p %{buildroot}/usr/share/applications/
