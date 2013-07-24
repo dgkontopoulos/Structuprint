@@ -74,8 +74,8 @@ instructions in the GitHub wiki</a> for more details!</b></center>
 
 ## EXAMPLE
 
-<center><img src="http://dgkontopoulos.github.io/Structuprint/images/anim_351_to_400.gif" width="80%" height="80%">
-<br>_Refresh the page to restart the animation._</center>
+<center><img src="http://ubuntuone.com/2Wr7P5tLiOK6A1fJ6jPiFQ" width="80%" height="80%">
+<br>A structuprint frame of <a href="http://www.rcsb.org/pdb/explore.do?structureId=1rop">1ROP</a>, colored according to the BCUT\_SMR\_0 property.</center>
 
 ## AUTHORS
 
