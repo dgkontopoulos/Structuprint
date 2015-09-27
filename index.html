@@ -1,207 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <link rel='icon' href='./images/structuprint.ico' type='image/x-icon'>
-    <link rel='shortcut_icon' href='./images/structuprint.ico' type='image/x-icon'> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <link rel='icon' href='images/structuprint.ico' type='image/x-icon'>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
 
-    <title>Structuprint by dgkontopoulos</title>
-  </head>
+  <title>Structuprint</title>
+  <meta name="description" content="A utility for analysis of MD simulations (and single PDB files as well), offering a 2D visualisation technique.">
 
-  <body>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
     <header>
-      <div class="inner">
-        <h1>Structuprint <img src="./images/logo.png" align = "right"></h1>
-        <h2>A utility for analysis of MD simulations (and single PDB files as well), offering a novel 2D visualisation technique.</h2>
-        <a href="https://github.com/dgkontopoulos/Structuprint" class="button"><small>View project on</small>GitHub</a>
-      </div>
+      <center><img src='images/structuprint_logo.png'></center>
     </header>
-
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h2>
-<a name="name" class="anchor" href="#name"><span class="octicon octicon-link"></span></a>NAME</h2>
-
-<p><strong><b>Structuprint</b></strong></p>
-
-<h2>
-<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>DESCRIPTION</h2>
-
-<p>A utility for analysis of MD simulations (and single PDB structures as well), offering a novel 2D 
-visualisation technique. Its output may be a single frame or a full-blown animation, depending on 
-input.</p>
-
-<p>Tutorials are available at the <a href="https://github.com/dgkontopoulos/Structuprint/wiki/_pages">GitHub wiki</a>.</p>
+    <div id="container">
+	  <hr style="height:1px; visibility:hidden;" />
+      <center><font color = 'white'><big>Latest version: <b>1.001</b></big></font></center>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/dgkontopoulos/Structuprint/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/dgkontopoulos/Structuprint/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/dgkontopoulos/Structuprint" class="code">View the source code on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
 
 <h2>
-<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>DEPENDENCIES</h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+<a href='./images/structuprint.png'><img src='images/structuprint.png' height = 160px align = 'right'/></a>
+Structuprint is a software tool for two-dimensional representation of protein 
+structures' surfaces, capable of generating animations or still images.
 
-<p>-the <b>Perl</b> interpreter, &gt;= 5.10</p>
+<br/><br/>Its main purpose is the visualization of the distribution of 
+physicochemical descriptors on the exposed residues of a protein. Beyond 
+this, it can be used for various structural comparisons, e.g. of 
+evolutionarily related proteins.
 
-<p>-<b>Astro::MapProjection</b>, &gt;= 0.01 (Perl module)</p>
-
-<p>-<b>Bio::PDB::Structure</b>, &gt;= 0.01 (Perl module)</p>
-
-<p>-<b>DBD::SQLite</b>, &gt;= 1.37 (Perl module)</p>
-
-<p>-<b>DBI</b>, &gt;= 1.622 (Perl module)</p>
-
-<p>-<b>File::Spec</b>, &gt;= 3.33 (Perl module)</p>
-
-<p>-<b>File::Copy</b>, &gt;= 2.18 (Perl module)</p>
-
-<p>-<b>Gtk2</b>, &gt;= 1.247 (Perl module) <b>[for GNU/Linux only]</b></p>
-
-<p>-<b>List::Util</b>, &gt;= 1.25 (Perl module)</p>
-
-<p>-<b>Math::Round</b>, &gt;= 0.06 (Perl module)</p>
-
-<p>-<b>Statistics::R</b>, &gt;= 0.30 (Perl module)</p>
-
-<p>-the <b>R</b> interpreter, &gt;= 2.15.1</p>
-
-<p>-<b>ggplot2</b>, &gt;= 0.9.3 (R package)</p>
-
-<p>-<b>ImageMagick</b></p>
-
-<p>-<b>Gifsicle</b></p>
-
-<p>-<b>xterm [for GNU/Linux only]</b></p>
-
-<h2>SUPPORTED OPERATING SYSTEMS</h2>
-
-<p>
-<b>Structuprint</b> runs out of the box on the following GNU/Linux distributions: <b>Debian 7</b>, <b>Ubuntu 13.04</b>, <b>Linux Mint 15</b>, <b>Fedora 19</b>. 
-
-<br><br>It will run on other GNU/Linux distros, as well as on BSD and OS X systems, as long as you manually install missing dependencies. The installation script (install.sh) will check for missing software and proceed with the installation, if everything is OK.
-
-<br><br>It can also run on Windows systems (via setup.exe), as long as Perl and R are correctly installed.
-
-<br><br>The GUI version is only available for GNU/Linux systems. On other operating systems you'll have to use the command line version.
-
-<br><center><b>See the <a href="https://github.com/dgkontopoulos/Structuprint/wiki/_pages">installation instructions in the GitHub wiki</a> for more details!</b></center><br>
-
-<h2>SCREENSHOTS</h2>
-<center><img src="./images/example_gnu_linux_frame_gui.png">
-<br><i>Creating a structuprint frame using the GUI on Fedora 19.</i>
-<br><br><img src="./images/example_osx_anim.png">
-<br><i>Creating a structuprint animation using the command line on OS X v10.8.</i>
-<br><br></center>
-	
-<h2>EXAMPLE</h2>
-<center><img src="./images/anim_351_to_400.gif" width="80%" height="80%">
-<br><i>Refresh the page to restart the animation.</i>
-</center><br><br>
+<br/><br/>For more information, see the 
+<a href='https://github.com/dgkontopoulos/Structuprint/raw/master/documentation/documentation.pdf'>user documentation</a> 
+and the <a href='https://github.com/dgkontopoulos/Structuprint/raw/master/documentation/properties_codebook.pdf'>codebook of default pre-calculated properties</a>.
 
 <h2>
-<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>AUTHORS</h2>
+<a id="supported_OS" class="anchor" href="#supported_os" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported Operating Systems</h2>
 
-<p>-Dimitrios Vlachakis &lt;<a href="mailto:dvlachakis@bioacademy.gr">dvlachakis@bioacademy.gr</a>&gt;</p>
+Available features:
+<table>
+	<tr>
+		<td></td>
+		<td><center><img src='images/linux.png' style="vertical-align: middle;"/>
+		<b><big>GNU/Linux</big></b></center></td>
+		<td><center><img src='images/osx.png' style="vertical-align: middle;"/>
+		<b><big>OS X</big></b></center></td>
+		<td><center><img src='images/windows.png' style="vertical-align: middle;"/>
+		<b><big>Windows</big></b></center></td>
+	</tr>
+	<tr>
+		<td scope="row"><b>Command Line Interface</b></td>
+		<td><center><img src=images/tick.png></center></td>
+		<td><center><img src=images/tick.png></center></td>
+		<td><center><img src=images/tick.png></center></td>
+	</tr>
+	<tr>
+		<td scope="row"><b>Graphical User Interface</b></td>
+		<td><center><img src=images/tick.png></center></td>
+		<td><center><img src=images/x.png></center></td>
+		<td><center><img src=images/x.png></center></td>
+	</tr>
+	<tr>
+		<td scope="row"><b>Parallelism</b></td>
+		<td><center><img src=images/tick.png></center></td>
+		<td><center><img src=images/tick.png></center></td>
+		<td><center><img src=images/x.png></center></td>
+	</tr>
+</table>
 
-<p>-Georgia Tsiliki &lt;<a href="mailto:gtsiliki@bioacademy.gr">gtsiliki@bioacademy.gr</a>&gt;</p>
+Prebuilt packages and installers are available for the following Operating Systems:
 
-<p>-Dimitrios - Georgios Kontopoulos &lt;<a href="mailto:dgkontopoulos@gmail.com">dgkontopoulos@gmail.com</a>&gt;</p>
+<table cols=2>
+<tr>
+	<td colspan='2' align=left nowrap valign=middle width='100%'>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	<img src='images/linux.png' style="vertical-align: middle;"/>
+	<b><big>GNU/Linux</big></b></td>
+</tr>
+<tr>
+	<td align=left nowrap valign=middle width='30%'>
+	<img src='images/ubuntu.png' style="vertical-align: middle;"/> Ubuntu 14.04
+	<hr style="height:5px; visibility:hidden;" />
+	<img src='images/debian.png' style="vertical-align: middle;"/> Debian 8</td>
+	<td align=left nowrap valign=middle width='70%'><a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001_Ubuntu_14_04_32.deb'>32-bit</a> 
+	<small>(38.2 MB)</small>, <a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001_Ubuntu_14_04_64.deb'>64-bit</a> 
+	<small>(38.7 MB)</small></td>
+</tr>
 
-<p>-Sophia Kossida &lt;<a href="mailto:skossida@bioacademy.gr">skossida@bioacademy.gr</a>&gt;</p>
+<tr>
+	<td align=left nowrap valign=middle width='30%'>
+	<img src='images/fedora.png' style="vertical-align: middle;"/> Fedora 22</td>
+	<td align=left nowrap valign=middle width='70%'><a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001_Fedora_22_32.rpm'>32-bit</a> 
+	<small>(41.5 MB)</small>, <a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001_Fedora_22_64.rpm'>64-bit</a> 
+	<small>(41.6 MB)</small></td>
+</tr>
+
+<tr>
+	<td align=left nowrap valign=middle width='30%'>
+	<img src='images/centos.png' style="vertical-align: middle;"/> 
+	CentOS 7<sup><font ><a href=#1 style='color:red'><b>1</b></a></font></sup></td>
+	<td align=left nowrap valign=middle width='70%'><a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001_CentOS_7_64.rpm'>64-bit</a> 
+	<small>(42.6 MB)</small></td>
+</tr>
+
+<tr>
+	<td align=left nowrap valign=middle width='30%'>
+	<img src='images/opensuse.png' style="vertical-align: middle;"/> openSUSE 13.2</td>
+	<td align=left nowrap valign=middle width='70%'><a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001_openSUSE_13_2_32.rpm'>32-bit</a> 
+	<small>(41.1 MB)</small>, <a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001_openSUSE_13_2_64.rpm'>64-bit</a>
+	 <small>(41.3 MB)</small></td>
+</tr>
+</table>
+
+<table cols=2>
+<tr>
+	<td align=left nowrap valign=middle width='100%'>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	<img src='images/windows.png' style="vertical-align: middle;"/>
+	<b><big>Windows</big></b>
+	<center><small>(tested on 7 and 8.1)</small></center></td>
+	<td><a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/Structuprint_1.001_setup.exe'>32-bit installer</a>
+	 <small>(71.5 MB)</small></td>
+</tr>
+</table>
+
+<table cols=2>
+<tr>
+	<td align=left nowrap valign=middle width='100%'>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	<img src='images/osx.png' style="vertical-align: middle;"/>
+	<b><big>OS X</big></b>
+	<center><small>(tested on Yosemite)</small></center></td>
+	<td><a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001.pkg'>installer package</a>
+	 <small>(94.3 MB)</small></td>
+</tr>
+</table>
+
+<a id='1' style ='text-decoration:none;color:black'><small><b><font color = 'red'>1</font>:</b>The 
+<small><code>epel-release</code></small> package must be already 
+installed before installing Structuprint.</small></a>
 
 <h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>LICENSE</h2>
+<a id="other_OS" class="anchor" href="#other_os" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Systems</h2>
+
+For all other systems, you will need to manually install Structuprint 
+from the source code, along with all of its dependencies. See the 
+<a href='https://github.com/dgkontopoulos/Structuprint/raw/master/documentation/documentation.pdf'>documentation</a> 
+for more details.<br/>
+
+<table cols=2>
+<tr>
+	<td align=left nowrap valign=middle width='100%'>
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	<b>Source code</b></td>
+	<td><a href=
+	'https://github.com/dgkontopoulos/Structuprint/releases/download/1.001/structuprint_1.001.tar.gz'>tarball</a>
+	 <small>(3.9 MB)</small></td>
+</tr>
+</table>
+
+<h2>
+<a id="authors" class="anchor" href="#authors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors</h2>
+
+<p><a href="mailto:dgkontopoulos@gmail.com">Dimitrios - Georgios Kontopoulos</a>, 
+<a href="mailto:dvlachakis@bioacademy.gr">Dimitrios Vlachakis</a>,
+<a href="mailto:gtsiliki@central.ntua.gr">Georgia Tiliki</a>, and 
+<a href="mailto:sofia.kossida@igh.cnrs.fr">Sofia Kossida</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>This program is free software: you can redistribute it 
-and/or modify it under the terms of the GNU General 
+and/or modify it under the terms of the 
+<a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU General 
 Public License as published by the Free Software 
-Foundation, either version 2 of the License, or (at your 
-option) any later version.</p>
+Foundation, either version 3 of the License, or (at your 
+option) any later version</a>.</p>
 
 <p>This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.</p>
 
-<p>For more information, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
-
-<p><br></p>
-
-<h5>
-<a name="bioinformatics--medical-informatics--biomedical-research-foundation-academy-of-athens" class="anchor" href="#bioinformatics--medical-informatics--biomedical-research-foundation-academy-of-athens"><span class="octicon octicon-link"></span></a><a href="http://www.bioacademy.gr/bioinformatics/">Bioinformatics &amp; Medical Informatics | Biomedical Research Foundation, Academy of Athens</a>
-</h5>
-
 <p></p>
-        </section>
-
-        <aside id="sidebar">
-		  <center><font size=+3><b><u>Version 1.00</u></b></font></center>
-		  <img src="./images/linux.png"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/debian.png">&nbsp;&nbsp;<img src="./images/ubuntu.png">&nbsp;&nbsp;<img src="./images/linux_mint.png">
-          <a href="https://github.com/dgkontopoulos/Structuprint/releases/download/1.0/structuprint_1.00-0_i386.deb" class="button">
-            <small>Download</small>
-            .deb (32 bit)
-          </a>
-          <a href="https://github.com/dgkontopoulos/Structuprint/releases/download/1.0/structuprint_1.00-0_amd64.deb" class="button">
-            <small>Download</small>
-            .deb (64 bit)
-          </a>
-          For <b>Debian 7</b>, <b>Ubuntu 13.04</b>, <b>Linux Mint 15</b>.
-          <hr/>
-		  <img src="./images/linux.png"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/fedora.png">
-		  <a href="https://github.com/dgkontopoulos/Structuprint/releases/download/1.0/structuprint-1.01-4.1.i686.rpm" class="button">
-            <small>Download</small>
-            .rpm (32 bit)
-          </a>
-          <a href="https://github.com/dgkontopoulos/Structuprint/releases/download/1.0/structuprint-1.01-2.1.x86_64.rpm" class="button">
-            <small>Download</small>
-            .rpm (64 bit)
-          </a>
-          For <b>Fedora 19</b>.
-          <hr/>
-          <img src="./images/linux.png">
-          <a href="https://github.com/dgkontopoulos/Structuprint/releases/download/1.0/structuprint_1.00_gnu_linux.tar.gz" class="button">
-            <small>Download</small>
-            .tar.gz
-          </a>
-          For other GNU/Linux distributions.
-          <hr/>
-          
-          <img src="./images/bsd.png">
-          <a href="https://github.com/dgkontopoulos/Structuprint/releases/download/1.0/structuprint_1.00_bsd.tar.gz" class="button">
-            <small>Download</small>
-            .tar.gz
-          </a>
-          For BSD systems.
-          <hr/>
-          
-          <img src="./images/osx.png">
-          <a href="https://github.com/dgkontopoulos/Structuprint/releases/download/1.0/structuprint_1.00_osx.tar.gz" class="button">
-            <small>Download</small>
-            .tar.gz
-          </a>
-          For OS X systems.
-          <hr/>
-          
-          <img src="./images/windows.png">
-          <a href="https://github.com/dgkontopoulos/Structuprint/releases/download/1.0/structuprint-1.01_setup.exe" class="button">
-            <small>Download</small>
-            setup.exe
-          </a>
-          For Windows systems.
-          <br><br><br>
-          <p class="repo-owner"><a href="https://github.com/dgkontopoulos/Structuprint">Structuprint</a> is maintained by <a href="https://github.com/dgkontopoulos">dgkontopoulos</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+        </article>
       </div>
     </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/dgkontopoulos" class="avatar"><img src="https://avatars0.githubusercontent.com/u/854866?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/dgkontopoulos">dgkontopoulos</a> maintains <a href="https://github.com/dgkontopoulos/Structuprint">Structuprint</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page was generated using <a href="http://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
 
   
-  </body>
+</body>
 </html>
