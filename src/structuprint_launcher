@@ -1,0 +1,12 @@
+#!/bin/sh
+
+quote() {
+    echo "$1" | sed "s/'/'\"'\"'/g"
+}
+args=
+for arg in "$@"
+do
+    argq="'"`quote "$arg"`"'"
+    args="$args $argq "
+done
+

@@ -1,0 +1,105 @@
+\begin{thebibliography}{HXZX04}
+
+\bibitem[Balaban1979]{Balaban1979}
+Alexandra~T Balaban.
+\newblock Five new topological indices for the branching of tree-like graphs.
+\newblock {\em {Theoretica Chimica Acta}}, 53:355--375, 1979.
+
+\bibitem[Balaban1982]{Balaban1982}
+Alexandru~T Balaban.
+\newblock Highly discriminating distance-based topological index.
+\newblock {\em Chemical Physics Letters}, 89(5):399--404, 1982.
+
+\bibitem[CRC1994]{CRC1994}
+David~R Lide, editor.
+\newblock {\em {CRC Handbook of Chemistry and Physics}}.
+\newblock {CRC Press}, 1994.
+
+\bibitem[Ertl2000]{Ertl2000}
+Peter Ertl, Bernhard Rohde, and Paul Selzer.
+\newblock Fast calculation of molecular polar surface area as a sum of
+  fragment-based contributions and its application to the prediction of drug
+  transport properties.
+\newblock {\em {Journal of Medicinal Chemistry}}, 43(20):3714--3717, 2000.
+
+\bibitem[Hall1991]{Hall1991}
+Lowell~H Hall and Lemont~B Kier.
+\newblock The molecular connectivity chi indexes and kappa shape indexes in
+  structure-property modeling.
+\newblock In {\em Reviews in Computational Chemistry, Volume 2}. Wiley Online
+  Library, 1991.
+
+\bibitem[Hou2004]{Hou2004}
+TJ~Hou, Ke~Xia, Wei Zhang, and XJ~Xu.
+\newblock Adme evaluation in drug discovery. 4. prediction of aqueous
+  solubility based on atom contribution approach.
+\newblock {\em Journal of Chemical Information and Computer Sciences},
+  44(1):266--275, 2004.
+
+\bibitem[Kazius2005]{Kazius2005}
+Jeroen Kazius, Ross McGuire, and Roberta Bursi.
+\newblock Derivation and validation of toxicophores for mutagenicity
+  prediction.
+\newblock {\em {Journal of Medicinal Chemistry}}, 48(1):312--320, 2005.
+
+\bibitem[Kier1977]{Kier1977}
+Lemont~B Kier and Lowell~H Hall.
+\newblock The nature of structure-activity-relationships and their relation to
+  molecular connectivity.
+\newblock {\em European Journal of Medicinal Chemistry}, 12(4):307--312, 1977.
+
+\bibitem[LOGP1998]{LOGP1998}
+P~Labute.
+\newblock {MOE LogP(Octanol/Water) Model \textit{unpublished}}, 1998.
+
+\bibitem[Lipinski2012]{Lipinski2012}
+Christopher~A Lipinski, Franco Lombardo, Beryl~W Dominy, and Paul~J Feeney.
+\newblock Experimental and computational approaches to estimate solubility and
+  permeability in drug discovery and development settings.
+\newblock {\em {Advanced Drug Delivery Reviews}}, 64:4--17, 2012.
+
+\bibitem[MOPAC1993]{MOPAC1993}
+JJP Stewart.
+\newblock {MOPAC Manual (Seventh Edition)}, 1993.
+
+\bibitem[MREF1998]{MREF1998}
+P~Labute.
+\newblock {MOE Molar Refractivity Model \textit{unpublished}}, 1998.
+
+\bibitem[Oprea2000]{Oprea2000}
+Tudor~I Oprea.
+\newblock Property distribution of drug-related chemical databases.
+\newblock {\em Journal of Computer-Aided Molecular Design}, 14(3):251--264,
+  2000.
+
+\bibitem[Pearlman1998]{Pearlman1998}
+Robert~S Pearlman and KM~Smith.
+\newblock Novel software tools for chemical diversity.
+\newblock In {\em {3D QSAR in drug design}}. Springer, 1998.
+
+\bibitem[Petitjean1992]{Petitjean1992}
+Michel Petitjean.
+\newblock Applications of the radius-diameter diagram to the classification of
+  topological and geometrical shapes of chemical compounds.
+\newblock {\em {Journal of Chemical Information and Computer Sciences}},
+  32(4):331--337, 1992.
+
+\bibitem[Stanton1990]{Stanton1990}
+David~T Stanton and Peter~C Jurs.
+\newblock Development and use of charged partial surface area structural
+  descriptors in computer-assisted quantitative structure-property relationship
+  studies.
+\newblock {\em {Analytical Chemistry}}, 62(21):2323--2329, 1990.
+
+\bibitem[Wiener1947]{Wiener1947}
+Harry Wiener.
+\newblock Structural determination of paraffin boiling points.
+\newblock {\em {Journal of the American Chemical Society}}, 69(1):17--20, 1947.
+
+\bibitem[Wildman1999]{Wildman1999}
+Scott~A Wildman and Gordon~M Crippen.
+\newblock Prediction of physicochemical parameters by atomic contributions.
+\newblock {\em {Journal of Chemical Information and Computer Sciences}},
+  39(5):868--873, 1999.
+
+\end{thebibliography}

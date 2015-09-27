@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Structuprint
+Comment=A utility for 2D visualization of protein structures' surfaces.
+Icon=/opt/structuprint/images/logo.png
+Categories=Graphics;Science;
+StartupWMClass=Structuprint_gui
+Exec=/opt/structuprint/structuprint_gui

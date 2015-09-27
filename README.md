@@ -1,105 +1,62 @@
-## NAME
+<center><img src='https://github.com/dgkontopoulos/Structuprint/raw/master/src/images/splash.png'></center>
 
-__Structuprint__
+## LATEST VERSION
+
+1.001
 
 ## DESCRIPTION
 
-A utility for analysis of MD simulations (and single PDB structures as well), offering a novel 2D 
-visualisation technique. Its output may be a single frame or a full-blown animation, depending on 
-input.
+Structuprint is a software tool for two-dimensional representation of protein 
+structures' surfaces, capable of generating animations or still images.
 
-Tutorials are available at the <a href="https://github.com/dgkontopoulos/Structuprint/wiki/_pages">GitHub wiki</a>.
-
-## DEPENDENCIES
-
-\-the <b>Perl</b> interpreter, >= 5.10
-
-\-<b>Astro::MapProjection</b>, >= 0.01 (Perl module)
-
-\-<b>Bio::PDB::Structure</b>, >= 0.01 (Perl module)
-
-\-<b>DBD::SQLite</b>, >= 1.37 (Perl module)
-
-\-<b>DBI</b>, >= 1.622 (Perl module)
-
-\-<b>File::Spec</b>, >= 3.33 (Perl module)
-
-\-<b>File::Copy</b>, >= 2.18 (Perl module)
-
-\-<b>Gtk2</b>, >= 1.247 (Perl module) <b>[for GNU/Linux only]</b>
-
-\-<b>List::Util</b>, >= 1.25 (Perl module)
-
-\-<b>Math::Round</b>, >= 0.06 (Perl module)
-
-\-<b>Statistics::R</b>, >= 0.30 (Perl module)
-
-\-the <b>R</b> interpreter, >= 2.15.1
-
-\-<b>ggplot2</b>, >= 0.9.3 (R package)
-
-\-<b>ImageMagick</b>
-
-\-<b>Gifsicle</b>
-
-\-<b>xterm [for GNU/Linux only]</b>
-
+Its main purpose is the visualization of the distribution of 
+physicochemical descriptors on the exposed residues of a protein. Beyond 
+this, it can be used for various structural comparisons, e.g. of 
+evolutionarily related proteins.
 
 ## SUPPORTED OPERATING SYSTEMS
 
-<b>Structuprint</b> runs out of the box on the following GNU/Linux distributions: 
-<b>Debian 7</b>, <b>Ubuntu 13.04</b>, <b>Linux Mint 15</b>, <b>Fedora 19</b>. 
+Structuprint runs out of the box on 5 different GNU/Linux distributions 
+(Ubuntu, Debian, Fedora, CentOS, openSUSE), Windows and OS X. For CentOS, the 
+`epel-release` package needs to be pre-installed, before attempting to install 
+Structuprint. Download links are available from 
+<a href='https://github.com/dgkontopoulos/Structuprint/releases'>GitHub releases</a> and also 
+from the <a href='https://dgkontopoulos.github.io/Structuprint/'>website</a>.
 
-It will run on other GNU/Linux distros, as well as on BSD and OS X systems, 
-as long as you manually install missing dependencies. The installation script 
-(install.sh) will check for missing software and proceed with the installation, if 
-everything is OK.
+For all other systems, you will need to manually install Structuprint 
+from the source code, along with all of its dependencies:
 
-It can also run on Windows systems (via setup.exe), as long as Perl and R 
-are correctly installed.
+    make test # Makes sure that all dependencies are installed.
+    make
+    make install
 
-The GUI version is only available for GNU/Linux systems. On other operating 
-systems you'll have to use the command line version.
+The Graphical User Interface is only available for GNU/Linux systems. On other operating 
+systems you will have to use the Command Line Interface. CPU parallelism is supported 
+on GNU/Linux and OS X, but not on Windows.
 
-<center><b>See the <a href="https://github.com/dgkontopoulos/Structuprint/wiki/_pages">installation 
-instructions in the GitHub wiki</a> for more details!</b></center>
-
-## SCREENSHOTS
-
-<center><img src="http://dgkontopoulos.github.io/Structuprint/images/example_gnu_linux_frame_gui.png">
-<br><i>Creating a structuprint frame using the GUI on Fedora 19.</i>
-<br><br><img src="http://dgkontopoulos.github.io/Structuprint/images/example_osx_anim.png">
-<br><i>Creating a structuprint animation using the command line on OS X v10.8.</i>
-</center>
-
-## EXAMPLE
-
-<center><img src="http://ubuntuone.com/2Wr7P5tLiOK6A1fJ6jPiFQ" width="80%" height="80%">
-<br>A structuprint frame of <a href="http://www.rcsb.org/pdb/explore.do?structureId=1rop">1ROP</a>, colored according to the BCUT\_SMR\_0 property.</center>
+For more information, see the 
+<a href='https://github.com/dgkontopoulos/Structuprint/raw/master/documentation/documentation.pdf'>documentation</a>.
 
 ## AUTHORS
 
-\-Dimitrios Vlachakis <<dvlachakis@bioacademy.gr>>
-
-\-Georgia Tsiliki <<gtsiliki@bioacademy.gr>>
-
 \-Dimitrios - Georgios Kontopoulos <<dgkontopoulos@gmail.com>>
 
-\-Sophia Kossida <<skossida@bioacademy.gr>>
+\-Dimitrios Vlachakis <<dvlachakis@bioacademy.gr>>
+
+\-Georgia Tsiliki <<gtsiliki@central.ntua.gr>>
+
+\-Sofia Kossida <<sofia.kossida@igh.cnrs.fr>>
 
 ## LICENSE
 
 This program is free software: you can redistribute it 
-and/or modify it under the terms of the GNU General 
+and/or modify it under the terms of the 
+<a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU General 
 Public License as published by the Free Software 
-Foundation, either version 2 of the License, or (at your 
-option) any later version.
+Foundation, either version 3 of the License, or (at your 
+option) any later version</a>.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
-For more information, see
-<a href="http://www.gnu.org/licenses/" style="text-decoration:none">
-http://www.gnu.org/licenses/<a>.

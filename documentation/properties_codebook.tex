@@ -1,0 +1,1007 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[left=2cm,top=2cm,right=2cm,bottom=2cm,head=.5cm,foot=.5cm]{geometry}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+
+\definecolor{lightgray}{gray}{0.9}
+
+\let\oldlongtable\longtable
+\let\endoldlongtable\endlongtable
+
+\def\zza{\global\let\zz\zzb
+\fullwidthcolor{lightgray}}%
+
+\def\zzb{\global\let\zz\zza}
+
+\def\fullwidthcolor#1{\color{#1}\leaders\vrule\hskip\textwidth\hskip-\textwidth\kern0pt}
+\def\resetLTcolor{\global\let\zz\zza}
+
+\LTleft0pt
+\LTright0pt
+
+\newcommand{\angstrom}{\mbox{\normalfont\AA}}
+
+\begin{document}
+
+\begin{center}
+
+\LARGE{Properties codebook for} \hspace{-4mm}
+{\begingroup
+\setbox0=\hbox{\includegraphics[width=0.3\textwidth]{../src/images/splash.png}}
+\parbox{\wd0}{\box0}\endgroup}
+\LARGE{version 1.001}
+
+\rule{\textwidth}{1pt}
+\end{center}
+
+\noindent The following properties were recorded for the 20 common amino acids, using 
+the\href{http://www.chemcomp.com/MOE-Molecular_Operating_Environment.htm}{
+\textbf{Molecular Operating Environment}} (MOE) software package (version 2012.10), 
+developed by the Chemical Computing Group (Montreal, Canada).
+
+\resetLTcolor
+\begin{longtable}{@{\zz}|p{0.24\textwidth}|p{0.71\textwidth}|}
+\hline
+\rowcolor{yellow!50}\multicolumn{1}{|c|}{\textbf{Property}} & \multicolumn{1}{|c|}{\textbf{Description}}\\
+\hline
+\endhead
+
+\texttt{a\_acc} & Number of hydrogen bond acceptor atoms (not counting acidic 
+atoms but counting atoms that are both hydrogen bond donors and acceptors such 
+as -OH).\\ \hline
+
+\texttt{a\_acid} & Number of acidic atoms.\\ \hline
+
+\texttt{a\_aro} & Number of aromatic atoms.\\ \hline
+
+\texttt{a\_base} & Number of basic atoms.\\ \hline
+
+\texttt{a\_count} & Number of atoms (including implicit hydrogens). This is 
+calculated as the sum of ($1 + h_i$) over all non-trivial atoms $i$.\\ \hline
+
+\texttt{a\_don} & Number of hydrogen bond donor atoms (not counting basic atoms 
+but counting atoms that are both hydrogen bond donors and acceptors such as 
+-OH).\\ \hline
+
+\texttt{a\_heavy} & Number of heavy atoms \#\{$Z_i | Z_i > 1$\}.\\ \hline
+
+\texttt{a\_hyd} & Number of hydrophobic atoms.\\ \hline
+
+\texttt{a\_IC} & Atom information content (total). This is calculated to be 
+\texttt{a\_ICM} times $n$.\\ \hline
+
+\texttt{a\_ICM} & Atom information content (mean). This is the entropy of the 
+element distribution in the molecule (including implicit hydrogens but not 
+lone pair pseudo-atoms). Let $n_i$ be the number of occurrences of atomic number 
+$i$ in the molecule. Let $pi = n_i / n$ where $n$ is the sum of the $n_i$. The 
+value of \texttt{a\_ICM} is the negative of the sum over all $i$ of $p_i$ log 
+$p_i$.\\ \hline
+
+\texttt{a\_nB} & Number of boron atoms \#\{$Z_i | Z_i = 5$\}.\\ \hline
+
+\texttt{a\_nBr} & Number of bromine atoms \#\{$Z_i | Z_i = 35$\}.\\ \hline
+
+\texttt{a\_nC} & Number of carbon atoms \#\{$Z_i | Z_i = 6$\}.\\ \hline
+
+\texttt{a\_nCl} & Number of chlorine atoms \#\{$Z_i | Z_i = 17$\}.\\ \hline
+
+\texttt{a\_nF} & Number of fluorine atoms \#\{$Z_i | Z_i = 9$\}.\\ \hline
+
+\texttt{a\_nH} & Number of hydrogen atoms (including implicit hydrogens). This 
+is calculated as the sum of $h_i$ over all non-trivial atoms $i$ plus the 
+number of non-trivial hydrogen atoms.\\ \hline
+
+\texttt{a\_nI} & Number of iodine atoms \#\{$Z_i | Z_i = 53$\}.\\ \hline
+
+\texttt{a\_nN} & Number of nitrogen atoms \#\{$Z_i | Z_i = 7$\}.\\ \hline
+
+\texttt{a\_nO} & Number of oxygen atoms \#\{$Z_i | Z_i = 8$\}.\\ \hline
+
+\texttt{a\_nP} & Number of phosphorus atoms \#\{$Z_i | Z_i = 15$\}.\\ \hline
+
+\texttt{a\_nS} & Number of sulfur atoms \#\{$Z_i | Z_i = 16$\}.\\ \hline
+
+\texttt{AM1\_dipole} & The dipole moment calculated using the AM1 Hamiltonian 
+\cite{MOPAC1993}.\\ \hline
+
+\texttt{AM1\_E} & The total SCF energy (kcal/mol) calculated using the AM1 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{AM1\_Eele} & The electronic energy (kcal/mol) calculated using the AM1 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{AM1\_HF} & The heat of formation (kcal/mol) calculated using the AM1 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{AM1\_HOMO} & The energy (eV) of the Highest Occupied Molecular Orbital 
+calculated using the AM1 Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{AM1\_IP} & The ionization potential (kcal/mol) calculated using the AM1 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{AM1\_LUMO} & The energy (eV) of the Lowest Unoccupied Molecular Orbital 
+calculated using the AM1 Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{apol} & Sum of the atomic polarizabilities (including implicit 
+hydrogens) with polarizabilities taken from \cite{CRC1994}.\\ \hline
+
+\texttt{ASA} & Water accessible surface area calculated using a radius of 1.4 
+$\angstrom$ for the water molecule. A polyhedral representation is used for each 
+atom in calculating the surface area.\\ \hline
+
+\texttt{ASA\_H} & Water accessible surface area of all hydrophobic ($|q_i|<0.2$) 
+atoms.\\ \hline
+
+\texttt{ASA\_minus} & Water accessible surface area of all atoms with negative 
+partial charge (strictly less than 0).\\ \hline
+
+\texttt{ASA\_P} & Water accessible surface area of all polar ($|q_i|\geq0.2$) 
+atoms.\\ \hline
+
+\texttt{ASA\_plus} & Water accessible surface area of all atoms with positive 
+partial charge (strictly greater than 0).\\ \hline
+
+\texttt{b\_1rotN} & Number of rotatable single bonds. Conjugated single bonds 
+are not included (e.g. ester and peptide bonds).\\ \hline
+
+\texttt{b\_1rotR} & Number of rotatable single bonds: \texttt{b\_1rotN} divided 
+by \texttt{b\_heavy}.\\ \hline
+
+\texttt{b\_ar} & Number of aromatic bonds.\\ \hline
+
+\texttt{b\_count} & Number of bonds (including implicit hydrogens). This is 
+calculated as the sum of ($d_i$/2 + $h_i$) over all non-trivial atoms $i$.\\ 
+\hline
+
+\texttt{b\_double} & Number of double bonds. Aromatic bonds are not considered 
+to be double bonds.\\ \hline
+
+\texttt{b\_heavy} & Number of bonds between heavy atoms.\\ \hline
+
+\texttt{b\_rotN} & Number of rotatable bonds. A bond is rotatable if it has 
+order 1, is not in a ring, and has at least two heavy neighbors.\\ \hline
+
+\texttt{b\_rotR} & Fraction of rotatable bonds: \texttt{b\_rotN} divided by 
+\texttt{b\_heavy}.\\ \hline
+
+\texttt{b\_single} & Number of single bonds (including implicit hydrogens). 
+Aromatic bonds are not considered to be single bonds.\\ \hline
+
+\texttt{b\_triple} & Number of triple bonds (including implicit hydrogens). 
+Aromatic bonds are not considered to be triple bonds.\\ \hline
+
+\texttt{balabanJ} & Balaban's connectivity topological index 
+\cite{Balaban1982}.\\ \hline
+
+\texttt{BCUT\_PEOE\_0} & The BCUT descriptors \cite{Pearlman1998} are 
+calculated from the eigenvalues of a modified adjacency matrix. Each $ij$ entry 
+of the adjacency matrix takes the value 1/sqrt($b_{ij}$) where $b_{ij}$ is the 
+formal bond order between bonded atoms $i$ and $j$. The diagonal takes the 
+value of the PEOE partial charges. The resulting eigenvalues are sorted and 
+the smallest, 1/3-ile, 2/3-ile and largest eigenvalues are reported.\\ \hline
+
+\texttt{BCUT\_PEOE\_1} & See above.\\ \hline
+
+\texttt{BCUT\_PEOE\_2} & See above.\\ \hline
+
+\texttt{BCUT\_PEOE\_3} & See above.\\ \hline
+
+\texttt{BCUT\_SLOGP\_0} & The BCUT descriptors using atomic contribution to 
+logP (using the Wildman and Crippen SlogP method) instead of partial 
+charge.\\ \hline
+
+\texttt{BCUT\_SLOGP\_1} & See above.\\ \hline
+
+\texttt{BCUT\_SLOGP\_2} & See above.\\ \hline
+
+\texttt{BCUT\_SLOGP\_3} & See above.\\ \hline
+
+\texttt{BCUT\_SMR\_0} & The BCUT descriptors using atomic contribution to molar 
+refractivity (using the Wildman and Crippen SlogP method) instead of partial 
+charge.\\ \hline
+
+\texttt{BCUT\_SMR\_1} & See above.\\ \hline
+
+\texttt{BCUT\_SMR\_2} & See above.\\ \hline
+
+\texttt{BCUT\_SMR\_3} & See above.\\ \hline
+
+\texttt{bpol} & Sum of the absolute value of the difference between atomic 
+polarizabilities of all bonded atoms in the molecule (including implicit 
+hydrogens) with polarizabilities taken from \cite{CRC1994}.\\ \hline
+
+\texttt{CASA\_minus} & Negative charge weighted surface area, \texttt{ASA\_minus} 
+times max \{ $q_i < 0$ \} \cite{Stanton1990}.\\ \hline
+
+\texttt{CASA\_plus} & Positive charge weighted surface area, \texttt{ASA\_plus} 
+times max \{ $q_i > 0$ \} \cite{Stanton1990}.\\ \hline
+
+\texttt{chi0} & Atomic connectivity index (order 0) from \cite{Hall1991} and 
+\cite{Kier1977}. This is calculated as the sum of 1/sqrt($d_i$) over all heavy 
+atoms $i$ with $d_i > 0$.\\ \hline
+
+\texttt{chi0\_C} & Carbon connectivity index (order 0). This is 
+calculated as the sum of 1/sqrt($v_i$) over all carbon atoms $i$ with 
+$d_i > 0$.\\ \hline
+
+\texttt{chi0v} & Atomic valence connectivity index (order 0) from \cite{Hall1991} and 
+\cite{Kier1977}. This is calculated as the sum of 1/sqrt($v_i$) over all heavy 
+atoms $i$ with $v_i > 0$.\\ \hline
+
+\texttt{chi0v\_C} & Carbon valence connectivity index (order 0). This is 
+calculated as the sum of 1/sqrt($v_i$) over all carbon atoms $i$ with 
+$v_i > 0$.\\ \hline
+
+\texttt{chi1} & Atomic connectivity index (order 1) from \cite{Hall1991} and 
+\cite{Kier1977}. This is calculated as the sum of 1/sqrt($d_id_j$) over all 
+bonds between heavy atoms $i$ and $j$ where $i < j$.\\ \hline 
+
+\texttt{chi1\_C} & Carbon connectivity index (order 1). This is calculated as 
+the sum of 1/sqrt($d_id_j$) over all bonds between carbon atoms $i$ and $j$ where 
+$i < j$.\\ \hline 
+
+\texttt{chi1v} & Atomic valence connectivity index (order 1) from 
+\cite{Hall1991} and \cite{Kier1977}. This is calculated as the sum of 
+1/sqrt($v_iv_j$) over all bonds between heavy atoms $i$ and $j$ where $i < j$.\\ 
+\hline
+
+\texttt{chi1v\_C} & Carbon valence connectivity index (order 1). This is 
+calculated as the sum of 1/sqrt($v_iv_j$) over all bonds between carbon atoms 
+$i$ and $j$ where $i < j$.\\ \hline
+
+\texttt{chiral} & The number of chiral centers.\\ \hline
+
+\texttt{chiral\_u} & The number of unconstrained chiral centers.\\ \hline
+
+\texttt{DASA} & Absolute value of the difference between \texttt{ASA\_plus} 
+and \texttt{ASA\_minus}.\\ \hline
+
+\texttt{DCASA} & Absolute value of the difference between \texttt{CASA\_plus} 
+and \texttt{CASA\_minus} \cite{Stanton1990}.\\ \hline
+
+\texttt{dens} & Mass density: molecular weight divided by van der Waals volume 
+as calculated in the \texttt{vol} descriptor.\\ \hline
+
+\texttt{density} & Molecular mass density: \texttt{Weight} divided by 
+\texttt{vdw\_vol} (amu/$\angstrom^3$).\\ \hline
+
+\texttt{diameter} & Largest value in the distance matrix \cite{Petitjean1992}.
+\\ \hline
+
+\texttt{dipole} & Dipole moment calculated from the partial charges of the 
+molecule.\\ \hline
+
+\texttt{dipoleX} & The x component of the dipole moment (external coordinates).\\ 
+\hline
+
+\texttt{dipoleY} & The y component of the dipole moment (external coordinates).\\ 
+\hline
+
+\texttt{dipoleZ} & The z component of the dipole moment (external coordinates).\\ 
+\hline
+
+\texttt{E} & Value of the potential energy.\\ \hline
+
+\texttt{E\_ang} & Angle bend potential energy.\\ \hline
+
+\texttt{E\_ele} & Electrostatic component of the potential energy.\\ \hline
+
+\texttt{E\_nb} & Value of the potential energy with all bonded terms disabled.\\ 
+\hline
+
+\texttt{E\_oop} & Out-of-plane potential energy.\\ \hline
+
+\texttt{E\_sol} & Solvation energy.\\ \hline
+
+\texttt{E\_stb} & Bond stretch-bend cross-term potential energy.\\ \hline
+
+\texttt{E\_str} & Bond stretch potential energy.\\ \hline
+
+\texttt{E\_strain} & Local strain energy: the current energy minus the value 
+of the energy at a near local minimum. The current energy is calculated as for 
+the \texttt{E} descriptor. The local minimum energy is the value of the 
+\texttt{E} descriptor after first performing an energy minimization.\\ \hline
+
+\texttt{E\_tor} & Torsion (proper and improper) potential energy.\\ \hline
+
+\texttt{E\_vdw} & Van der Waals component of the potential energy.\\ \hline
+
+\texttt{FASA\_H} & Fractional \texttt{ASA\_H} calculated as 
+\texttt{ASA\_H}/\texttt{ASA}.\\ \hline
+
+\texttt{FASA\_minus} & Fractional \texttt{ASA\_minus} calculated as 
+\texttt{ASA\_minus}/\texttt{ASA}.\\ \hline
+
+\texttt{FASA\_P} & Fractional \texttt{ASA\_P} calculated as 
+\texttt{ASA\_P}/\texttt{ASA}.\\ \hline
+
+\texttt{FASA\_plus} & Fractional \texttt{ASA\_plus} calculated as 
+\texttt{ASA\_plus}/\texttt{ASA}.\\ \hline
+
+\texttt{FCASA\_minus} & Fractional \texttt{CASA\_minus} calculated as 
+\texttt{CASA\_minus}/\texttt{ASA}.\\ \hline
+
+\texttt{FCASA\_plus} & Fractional \texttt{CASA\_plus} calculated as 
+\texttt{CASA\_plus}/\texttt{ASA}.\\ \hline
+
+\texttt{FCharge} & Total charge of the molecule (sum of formal charges).\\ \hline
+
+\texttt{GCUT\_PEOE\_0} & The GCUT descriptors are calculated from the 
+eigenvalues of a modified graph distance adjacency matrix. Each $ij$ entry of 
+the adjacency matrix takes the value 1/sqrt($d_{ij}$) where $d_{ij}$ is the 
+(modified) graph distance between atoms $i$ and $j$. The diagonal takes the 
+value of the PEOE partial charges. The resulting eigenvalues are sorted and 
+the smallest, 1/3-ile, 2/3-ile and largest eigenvalues are reported.\\ \hline
+
+\texttt{GCUT\_PEOE\_1} & See above.\\ \hline
+
+\texttt{GCUT\_PEOE\_2} & See above.\\ \hline
+
+\texttt{GCUT\_PEOE\_3} & See above.\\ \hline
+
+\texttt{GCUT\_SLOGP\_0} & The GCUT descriptors using atomic contribution to 
+logP (using the Wildman and Crippen SlogP method) instead of partial charge.\\ 
+\hline
+
+\texttt{GCUT\_SLOGP\_1} & See above.\\ \hline
+
+\texttt{GCUT\_SLOGP\_2} & See above.\\ \hline
+
+\texttt{GCUT\_SLOGP\_3} & See above.\\ \hline
+
+\texttt{GCUT\_SMR\_0} & The GCUT descriptors using atomic contribution to 
+molar refractivity (using the Wildman and Crippen SMR method) instead of 
+partial charge.\\ \hline
+
+\texttt{GCUT\_SMR\_1} & See above.\\ \hline
+
+\texttt{GCUT\_SMR\_2} & See above.\\ \hline
+
+\texttt{GCUT\_SMR\_3} & See above.\\ \hline
+
+\texttt{glob} & Globularity, or inverse condition number (smallest 
+eigenvalue divided by the largest eigenvalue) of the covariance matrix 
+of atomic coordinates. A value of 1 indicates a perfect sphere while a 
+value of 0 indicates a two- or one-dimensional object.\\ \hline
+
+\texttt{Kier1} & First kappa shape index: $(n-1)^2 / m^2$ \cite{Hall1991}.\\ 
+\hline
+
+\texttt{Kier2} & Second kappa shape index: $(n-1)^2 / m^2$ \cite{Hall1991}.\\ 
+\hline
+
+\texttt{Kier3} & Third kappa shape index: $(n-1)(n-3)^2 / p_3^2$ for odd $n$, 
+and $(n-3)(n-2)^2 / p_3^2$ for even $n$ \cite{Hall1991}.\\ \hline
+
+\texttt{KierA1} & First alpha modified shape index: $s(s-1)^2 / m^2$ where 
+$s = n + a$ \cite{Hall1991}.\\ \hline
+
+\texttt{KierA2} & Second alpha modified shape index: $s(s-1)^2 / m^2$ where 
+$s = n + a$ \cite{Hall1991}.\\ \hline
+
+\texttt{KierA3} & Third alpha modified shape index: $(s-1)(s-3)^2 / p_3^2$ 
+for odd $n$, and $(s-3)(s-2)^2 / p_3^2$ for even n where $s = n + a$ 
+\cite{Hall1991}.\\ \hline
+
+\texttt{KierFlex} & Kier molecular flexibility index: 
+(\texttt{KierA1})(\texttt{KierA2})/$n$ \cite{Hall1991}.\\ \hline
+
+\texttt{lip\_acc} & The number of O and N atoms.\\ \hline
+
+\texttt{lip\_don} & The number of OH and NH atoms.\\ \hline
+
+\texttt{lip\_druglike} & One if and only if \texttt{lip\_violation} $< 2$ 
+otherwise zero.\\ \hline
+
+\texttt{lip\_violation} & The number of violations of Lipinski's Rule of Five 
+\cite{Lipinski2012}.\\ \hline
+
+\texttt{logP\_par\_o\_div\_w\_par\_} & Log of the octanol/water partition 
+coefficient (including implicit hydrogens). This property is calculated from a 
+linear atom type model \cite{LOGP1998} with $r^2$ = 0.931, RMSE=0.393 on 
+1,827 molecules.\\ \hline
+
+\texttt{logS} & Log of the aqueous solubility (mol/L). This property is 
+calculated from an atom contribution linear atom type model \cite{Hou2004} 
+with $r^2$ = 0.90, {\raise.17ex\hbox{$\scriptstyle\sim$}}1,200 molecules.\\ \hline
+
+\texttt{MNDO\_dipole} & The dipole moment calculated using the MNDO Hamiltonian 
+\cite{MOPAC1993}.\\ \hline
+
+\texttt{MNDO\_E} & The total SCF energy (kcal/mol) calculated using the MNDO 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{MNDO\_Eele} & The electronic energy (kcal/mol) calculated using the 
+MNDO Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{MNDO\_HF} & The heat of formation (kcal/mol) calculated using the MNDO 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{MNDO\_HOMO} & The energy (eV) of the Highest Occupied Molecular 
+Orbital calculated using the MNDO Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{MNDO\_IP} & The ionization potential (kcal/mol) calculated using the 
+MNDO Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{MNDO\_LUMO} & The energy (eV) of the Lowest Unoccupied Molecular 
+Orbital calculated using the MNDO Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{mr} & Molecular refractivity (including implicit hydrogens). This 
+property is calculated from an 11 descriptor linear model \cite{MREF1998} 
+with $r^2$ = 0.997, RMSE = 0.168 on 1,947 small molecules.\\ \hline
+
+\texttt{mutagenic} & Indicator of the presence of potentially toxic groups. 
+A non-zero value indicates that the molecule contains a mutagenic group. 
+The table of mutagenic groups is based on the Kazius set \cite{Kazius2005}.\\ 
+\hline
+
+\texttt{nmol} & The number of molecules (connected components).\\ \hline
+
+\texttt{npr1} & Normalized PMI ratio \texttt{pmi1}/\texttt{pmi3}.\\ \hline
+
+\texttt{npr2} & Normalized PMI ratio \texttt{pmi2}/\texttt{pmi3}.\\ \hline
+
+\texttt{opr\_brigid} & The number of rigid bonds from \cite{Oprea2000}.\\ \hline
+
+\texttt{opr\_leadlike} & One if and only if \texttt{opr\_violation} $< 2$ 
+otherwise zero.\\ \hline
+
+\texttt{opr\_nring} & The number of ring bonds from \cite{Oprea2000}.\\ \hline
+
+\texttt{opr\_nrot} & The number of rotatable bonds from \cite{Oprea2000}.\\ 
+\hline
+
+\texttt{opr\_violation} & The number of violations of Oprea's lead-like test 
+\cite{Oprea2000}.\\ \hline
+
+\texttt{PEOE\_PC\_minus} & Total negative partial charge: the sum of the 
+negative $q_i$.\\ \hline
+
+\texttt{PEOE\_PC\_plus} & Total positive partial charge: the sum of the 
+positive $q_i$.\\ \hline
+
+\texttt{PEOE\_RPC\_minus} & Relative negative partial charge: the smallest 
+negative $q_i$ divided by the sum of the negative $q_i$.\\ \hline
+
+\texttt{PEOE\_RPC\_plus} & Relative positive partial charge: the largest 
+positive $q_i$ divided by the sum of the positive $q_i$.\\ \hline
+
+\texttt{PEOE\_VSA\_FHYD} & Fractional hydrophobic van der Waals surface 
+area. This is the sum of the $v_i$ such that $|q_i|$ is less than or 
+equal to 0.2 divided by the total surface area. The $v_i$ are calculated 
+using a connection table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_FNEG} & Fractional negative van der Waals surface area. 
+This is the sum of the $v_i$ such that $q_i$ is negative divided by the total 
+surface area. The $v_i$ are calculated using a connection table 
+approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_FPNEG} & Fractional negative polar van der Waals surface 
+area. This is the sum of the $v_i$ such that $q_i$ is less than -0.2 divided 
+by the total surface area. The $v_i$ are calculated using a connection 
+table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_FPOL} & Fractional polar van der Waals surface area. 
+This is the sum of the $v_i$ such that $|q_i|$ is greater than 0.2 
+divided by the total surface area. The $v_i$ are calculated using a 
+connection table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_FPOS} & Fractional positive van der Waals surface 
+area. This is the sum of the $v_i$ such that $q_i$ is non-negative 
+divided by the total surface area. The $v_i$ are calculated using a 
+connection table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_FPPOS} & Fractional positive polar van der Waals 
+surface area. This is the sum of the $v_i$ such that $q_i$ is 
+greater than 0.2 divided by the total surface area. The $v_i$ are 
+calculated using a connection table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_HYD} & Total hydrophobic van der Waals surface area. 
+This is the sum of the $v_i$ such that $|q_i|$ is less than or equal 
+to 0.2. The $v_i$ are calculated using a connection table approximation.\\ 
+\hline
+
+\texttt{PEOE\_VSA\_minus0} & Sum of $v_i$ where $q_i$ is in the range 
+[-0.05,0.00).\\ \hline
+
+\texttt{PEOE\_VSA\_minus1} & Sum of $v_i$ where $q_i$ is in the range 
+[-0.10,-0.05).\\ \hline
+
+\texttt{PEOE\_VSA\_minus2} & Sum of $v_i$ where $q_i$ is in the range 
+[-0.15,-0.10).\\ \hline
+
+\texttt{PEOE\_VSA\_minus3} & Sum of $v_i$ where $q_i$ is in the range 
+[-0.20,-0.15).\\ \hline
+
+\texttt{PEOE\_VSA\_minus4} & Sum of $v_i$ where $q_i$ is in the range 
+[-0.25,-0.20).\\ \hline
+
+\texttt{PEOE\_VSA\_minus5} & Sum of $v_i$ where $q_i$ is in the range 
+[-0.30,-0.25).\\ \hline
+
+\texttt{PEOE\_VSA\_minus6} & Sum of $v_i$ where $q_i$ is less than -0.3.\\ 
+\hline
+
+\texttt{PEOE\_VSA\_NEG} & Total negative van der Waals surface area. 
+This is the sum of the $v_i$ such that $q_i$ is negative. The $v_i$ 
+are calculated using a connection table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_plus0} & Sum of $v_i$ where $q_i$ is in the range 
+[0.00,0.05).\\ \hline
+
+\texttt{PEOE\_VSA\_plus1} & Sum of $v_i$ where $q_i$ is in the range 
+[0.05,0.10).\\ \hline
+
+\texttt{PEOE\_VSA\_plus2} & Sum of $v_i$ where $q_i$ is in the range 
+[0.10,0.15).\\ \hline
+
+\texttt{PEOE\_VSA\_plus3} & Sum of $v_i$ where $q_i$ is in the range 
+[0.15,0.20).\\ \hline
+
+\texttt{PEOE\_VSA\_plus4} & Sum of $v_i$ where $q_i$ is in the range 
+[0.20,0.25).\\ \hline
+
+\texttt{PEOE\_VSA\_plus5} & Sum of $v_i$ where $q_i$ is in the range 
+[0.25,0.30).\\ \hline
+
+\texttt{PEOE\_VSA\_plus6} & Sum of $v_i$ where $q_i$ is greater than 0.3.\\ 
+\hline
+
+\texttt{PEOE\_VSA\_PNEG} & Total negative polar van der Waals surface 
+area. This is the sum of the $v_i$ such that $q_i$ is less than -0.2. 
+The $v_i$ are calculated using a connection table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_POL} & Total polar van der Waals surface area. This 
+is the sum of the $v_i$ such that $|q_i|$ is greater than 0.2. The $v_i$ 
+are calculated using a connection table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_POS} & Total positive van der Waals surface area. 
+This is the sum of the $v_i$ such that $q_i$ is non-negative. The 
+$v_i$ are calculated using a connection table approximation.\\ \hline
+
+\texttt{PEOE\_VSA\_PPOS} & Total positive polar van der Waals surface 
+area. This is the sum of the $v_i$ such that $q_i$ is greater than 
+0.2. The $v_i$ are calculated using a connection table approximation.\\ \hline
+
+\texttt{petitjean} & Value of (\texttt{diameter} - 
+\texttt{radius})/\texttt{diameter}.\\ \hline
+
+\texttt{petitjeanSC} & Petitjean graph Shape Coefficient as defined in 
+\cite{Petitjean1992}: (\texttt{diameter} - \texttt{radius})/\texttt{radius}.\\ 
+\hline
+
+\texttt{PM3\_dipole} & The dipole moment calculated using the PM3 Hamiltonian 
+\cite{MOPAC1993}.\\ \hline
+
+\texttt{PM3\_E} & The total SCF energy (kcal/mol) calculated using the PM3 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{PM3\_Eele} & The electronic energy (kcal/mol) calculated using the PM3 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{PM3\_HF} & The heat of formation (kcal/mol) calculated using the PM3 
+Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{PM3\_HOMO} & The energy (eV) of the Highest Occupied Molecular 
+Orbital calculated using the PM3 Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{PM3\_IP} & The ionization potential (kcal/mol) calculated using 
+the PM3 Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{PM3\_LUMO} & The energy (eV) of the Lowest Unoccupied Molecular 
+Orbital calculated using the PM3 Hamiltonian \cite{MOPAC1993}.\\ \hline
+
+\texttt{pmi} & Principal moment of inertia.\\ \hline
+
+\texttt{pmi1} & First diagonal element of diagonalized moment of inertia 
+tensor.\\ \hline
+
+\texttt{pmi2} & Second diagonal element of diagonalized moment of inertia 
+tensor.\\ \hline
+
+\texttt{pmi3} & Third diagonal element of diagonalized moment of inertia 
+tensor.\\ \hline
+
+\texttt{pmiX} & x component of the principal moment of inertia 
+(external coordinates).\\ \hline
+
+\texttt{pmiY} & y component of the principal moment of inertia 
+(external coordinates).\\ \hline
+
+\texttt{pmiZ} & z component of the principal moment of inertia 
+(external coordinates).\\ \hline
+
+\texttt{Q\_PC\_minus} & Total negative partial charge: the sum of the 
+negative $q_i$.\\ \hline
+
+\texttt{Q\_PC\_plus} & Total positive partial charge: the sum of the 
+positive $q_i$.\\ \hline
+
+\texttt{Q\_RPC\_minus} & Relative negative partial charge: the smallest 
+negative $q_i$ divided by the sum of the negative $q_i$.\\ \hline
+
+\texttt{Q\_RPC\_plus} & Relative positive partial charge: the largest 
+positive $q_i$ divided by the sum of the positive $q_i$.\\ \hline
+
+\texttt{Q\_VSA\_FHYD} & Fractional hydrophobic van der Waals surface 
+area. This is the sum of the $v_i$ such that $|q_i|$ is less than or 
+equal to 0.2 divided by the total surface area. The $v_i$ are 
+calculated using a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_FNEG} & Fractional negative van der Waals surface 
+area. This is the sum of the $v_i$ such that $q_i$ is negative 
+divided by the total surface area. The $v_i$ are calculated using 
+a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_FPNEG} & Fractional negative polar van der Waals 
+surface area. This is the sum of the $v_i$ such that $q_i$ is 
+less than -0.2 divided by the total surface area. The $v_i$ are 
+calculated using a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_FPOL} & Fractional polar van der Waals surface 
+area. This is the sum of the $v_i$ such that $|q_i|$ is greater 
+than 0.2 divided by the total surface area. The $v_i$ are 
+calculated using a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_FPOS} & Fractional positive van der Waals surface 
+area. This is the sum of the $v_i$ such that $q_i$ is non-negative 
+divided by the total surface area. The $v_i$ are calculated using 
+a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_FPPOS} & Fractional positive polar van der Waals 
+surface area. This is the sum of the $v_i$ such that $q_i$ is 
+greater than 0.2 divided by the total surface area. The $v_i$ 
+are calculated using a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_HYD} & Total hydrophobic van der Waals surface 
+area. This is the sum of the $v_i$ such that $|q_i|$ is less 
+than or equal to 0.2. The $v_i$ are calculated using a connection 
+table approximation.\\ \hline
+
+\texttt{Q\_VSA\_NEG} & Total negative van der Waals surface area. 
+This is the sum of the $v_i$ such that $q_i$ is negative. The 
+$v_i$ are calculated using a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_PNEG} & Total negative polar van der Waals surface 
+area. This is the sum of the $v_i$ such that $q_i$ is less than 
+-0.2. The $v_i$ are calculated using a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_POL} & Total polar van der Waals surface area. This 
+is the sum of the $v_i$ such that $|q_i|$ is greater than 0.2. The 
+$v_i$ are calculated using a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_POS} & Total positive van der Waals surface area. 
+This is the sum of the $v_i$ such that $q_i$ is non-negative. 
+The $v_i$ are calculated using a connection table approximation.\\ \hline
+
+\texttt{Q\_VSA\_PPOS} & Total positive polar van der Waals surface 
+area. This is the sum of the $v_i$ such that $q_i$ is greater than 
+0.2. The $v_i$ are calculated using a connection table approximation.\\ \hline
+
+\texttt{radius} & If $r_i$ is the largest matrix entry in row $i$ of the 
+distance matrix $D$, then the radius is defined as the smallest of the $r_i$
+\cite{Petitjean1992}.\\ \hline
+
+\texttt{reactive} & Indicator of the presence of reactive groups. A 
+non-zero value indicates that the molecule contains a reactive group. 
+The table of reactive groups is based on the \cite{Oprea2000} set and 
+includes metals, phospho-, N/O/S-N/O/S single bonds, thiols, acyl 
+halides, Michael Acceptors, azides, esters, etc.\\ \hline
+
+\texttt{rgyr} & Radius of gyration.\\ \hline
+
+\texttt{rings} & The number of rings.\\ \hline
+
+\texttt{RPC\_minus} & Relative negative partial charge: the smallest 
+negative $q_i$ divided by the sum of the negative $q_i$.\\ \hline
+
+\texttt{RPC\_plus} & Relative positive partial charge: the largest 
+positive $q_i$ divided by the sum of the positive $q_i$.\\ \hline
+
+\texttt{rsynth} & A value in [0,1] indicating the synthetic 
+reasonableness, or feasibility, of the chemical structure. A value 
+of 0 means it is unlikely that the molecule can be synthesized while 
+a value of 1 means that it is likely that the molecule can be 
+synthesized. The value reflects the fraction of heavy atoms in the 
+molecule that can be traced back to starting materials fragments 
+resulting from retrosynthetic disconnection rules.\\ \hline
+
+\texttt{SlogP} & Log of the octanol/water partition coefficient 
+(including implicit hydrogens). This property is an atomic 
+contribution model \cite{Wildman1999} that calculates logP from 
+the given structure; i.e. the correct protonation state 
+(washed structures). Results may vary from the 
+\texttt{logP\_par\_o\_div\_w\_par\_} descriptor. The training set 
+for \texttt{SlogP} was {\raise.17ex\hbox{$\scriptstyle\sim$}}7000 
+structures.\\ \hline
+
+\texttt{SlogP\_VSA0} & Sum of $v_i$ such that $L_i\leq-0.4$.\\ \hline
+
+\texttt{SlogP\_VSA1} & Sum of $v_i$ such that $L_i$ is in (-0.4,-0.2].\\ \hline
+
+\texttt{SlogP\_VSA2} & Sum of $v_i$ such that $L_i$ is in (-0.2,0].\\ \hline
+
+\texttt{SlogP\_VSA3} & Sum of $v_i$ such that $L_i$ is in (0,0.1].\\ \hline
+
+\texttt{SlogP\_VSA4} & Sum of $v_i$ such that $L_i$ is in (0.1,0.15].\\ \hline
+
+\texttt{SlogP\_VSA5} & Sum of $v_i$ such that $L_i$ is in (0.15,0.20].\\ \hline
+
+\texttt{SlogP\_VSA6} & Sum of $v_i$ such that $L_i$ is in (0.20,0.25].\\ \hline
+
+\texttt{SlogP\_VSA7} & Sum of $v_i$ such that $L_i$ is in (0.25,0.30].\\ \hline
+
+\texttt{SlogP\_VSA8} & Sum of $v_i$ such that $L_i$ is in (0.30,0.40].\\ \hline
+
+\texttt{SlogP\_VSA9} & Sum of $v_i$ such that $L_i > 0.40$.\\ \hline
+
+\texttt{SMR} & Molecular refractivity (including implicit hydrogens). This 
+property is an atomic contribution model \cite{Wildman1999} that assumes 
+the correct protonation state (washed structures). The model was trained 
+on {\raise.17ex\hbox{$\scriptstyle\sim$}}7000 structures and results may 
+vary from the \texttt{mr} descriptor.\\ \hline
+
+\texttt{SMR\_VSA0} & Sum of $v_i$ such that $R_i$ is in [0,0.11].\\ \hline
+
+\texttt{SMR\_VSA1} & Sum of $v_i$ such that $R_i$ is in (0.11,0.26].\\ \hline
+
+\texttt{SMR\_VSA2} & Sum of $v_i$ such that $R_i$ is in (0.26,0.35].\\ \hline
+
+\texttt{SMR\_VSA3} & Sum of $v_i$ such that $R_i$ is in (0.35,0.39].\\ \hline
+
+\texttt{SMR\_VSA4} & Sum of $v_i$ such that $R_i$ is in (0.39,0.44].\\ \hline
+
+\texttt{SMR\_VSA5} & Sum of $v_i$ such that $R_i$ is in (0.44,0.485].\\ \hline
+
+\texttt{SMR\_VSA6} & Sum of $v_i$ such that $R_i$ is in (0.485,0.56].\\ \hline
+
+\texttt{SMR\_VSA7} & Sum of $v_i$ such that $R_i > 0.56$.\\ \hline
+
+\texttt{std\_dim1} & Standard dimension 1: the square root of the largest 
+eigenvalue of the covariance matrix of the atomic coordinates. A standard 
+dimension is equivalent to the standard deviation along a principal 
+component axis.\\ \hline
+
+\texttt{std\_dim2} & Standard dimension 2: the square root of the second 
+largest eigenvalue of the covariance matrix of the atomic coordinates. 
+A standard dimension is equivalent to the standard deviation along a 
+principal component axis.\\ \hline
+
+\texttt{std\_dim3} & Standard dimension 3: the square root of the third 
+largest eigenvalue of the covariance matrix of the atomic coordinates. 
+A standard dimension is equivalent to the standard deviation along a 
+principal component axis.\\ \hline
+
+\texttt{TPSA} & Polar surface area ($\angstrom^2$) calculated using 
+group contributions to approximate the polar surface area from connection 
+table information only. The parameterization is that of \cite{Ertl2000}.\\ \hline
+
+\texttt{VAdjEq} & Vertex adjacency information (equality): 
+$-(1-f)log_2(1-f) - flog_2f$ where $f = (n^2 - m)/n^2$, $n$ is the number 
+of heavy atoms and $m$ is the number of heavy-heavy bonds. If $f$ is not 
+in the open interval (0,1), then 0 is returned.\\ \hline
+
+\texttt{VAdjMa} & Vertex adjacency information (magnitude): $1 + log_2m$ 
+where $m$ is the number of heavy-heavy bonds. If $m$ is zero, then zero 
+is returned.\\ \hline
+
+\texttt{VDistEq} & If $m$ is the sum of the distance matrix entries then 
+\texttt{VdistEq} is defined to be the sum of $log_2m - p_i log_2p_i/m$ 
+where $p_i$ is the number of distance matrix entries equal to $i$.\\ \hline
+
+\texttt{VDistMa} & If $m$ is the sum of the distance matrix entries then 
+\texttt{VDistMa} is defined to be the sum of $log_2m - D_{ij} log_2D_{ij}/m$ 
+over all $i$ and $j$.\\ \hline
+
+\texttt{vdw\_area} & Area of van der Waals surface ($\angstrom^2$) calculated 
+using a connection table approximation.\\ \hline
+
+\texttt{vdw\_vol} & Van der Waals volume ($\angstrom^3$) calculated using a 
+connection table approximation.\\ \hline
+
+\texttt{vol} & Van der Waals volume calculated using a grid approximation 
+(spacing 0.75 $\angstrom$).\\ \hline
+
+\texttt{VSA} & Van der Waals surface area. A polyhedral representation is 
+used for each atom in calculating the surface area.\\ \hline
+
+\texttt{vsa\_acc} & Approximation to the sum of VDW surface areas 
+($\angstrom^2$) of pure hydrogen bond acceptors (not counting acidic 
+atoms and atoms that are both hydrogen bond donors and acceptors such as 
+-OH).\\ \hline
+
+\texttt{vsa\_acid} & Approximation to the sum of VDW surface areas of 
+acidic atoms ($\angstrom^2$).\\ \hline
+
+\texttt{vsa\_base} & Approximation to the sum of VDW surface areas of 
+basic atoms ($\angstrom^2$).\\ \hline
+
+\texttt{vsa\_don} & Approximation to the sum of VDW surface areas of 
+pure hydrogen bond donors (not counting basic atoms and atoms that are 
+both hydrogen bond donors and acceptors such as -OH) ($\angstrom^2$).\\ \hline
+
+\texttt{vsa\_hyd} & Approximation to the sum of VDW surface areas of 
+hydrophobic atoms ($\angstrom^2$).\\ \hline
+
+\texttt{vsa\_other} & Approximation to the sum of VDW surface areas 
+($\angstrom^2$) of atoms typed as "other".\\ \hline
+
+\texttt{vsa\_pol} & Approximation to the sum of VDW surface areas 
+($\angstrom^2$) of polar atoms (atoms that are both hydrogen bond 
+donors and acceptors), such as -OH.\\ \hline
+
+\texttt{vsurf\_A} & Amphiphilic moment.\\ \hline
+
+\texttt{vsurf\_CP} & Critical packing parameter.\\ \hline
+
+\texttt{vsurf\_CW1} & Capacity factor (1).\\ \hline
+
+\texttt{vsurf\_CW2} & Capacity factor (2).\\ \hline
+
+\texttt{vsurf\_CW3} & Capacity factor (3).\\ \hline
+
+\texttt{vsurf\_CW4} & Capacity factor (4).\\ \hline
+
+\texttt{vsurf\_CW5} & Capacity factor (5).\\ \hline
+
+\texttt{vsurf\_CW6} & Capacity factor (6).\\ \hline
+
+\texttt{vsurf\_CW7} & Capacity factor (7).\\ \hline
+
+\texttt{vsurf\_CW8} & Capacity factor (8).\\ \hline
+
+\texttt{vsurf\_D1} & Hydrophobic volume (1).\\ \hline
+
+\texttt{vsurf\_D2} & Hydrophobic volume (2).\\ \hline
+
+\texttt{vsurf\_D3} & Hydrophobic volume (3).\\ \hline
+
+\texttt{vsurf\_D4} & Hydrophobic volume (4).\\ \hline
+
+\texttt{vsurf\_D5} & Hydrophobic volume (5).\\ \hline
+
+\texttt{vsurf\_D6} & Hydrophobic volume (6).\\ \hline
+
+\texttt{vsurf\_D7} & Hydrophobic volume (7).\\ \hline
+
+\texttt{vsurf\_D8} & Hydrophobic volume (8).\\ \hline
+
+\texttt{vsurf\_DD12} & Contact distances of \texttt{vsurf\_DDmin} (12).\\ \hline
+
+\texttt{vsurf\_DD13} & Contact distances of \texttt{vsurf\_DDmin} (13).\\ \hline
+
+\texttt{vsurf\_DD23} & Contact distances of \texttt{vsurf\_DDmin} (23).\\ \hline
+
+\texttt{vsurf\_DW12} & Contact distances of \texttt{vsurf\_EWmin} (12).\\ \hline
+
+\texttt{vsurf\_DW13} & Contact distances of \texttt{vsurf\_EWmin} (13).\\ \hline
+
+\texttt{vsurf\_DW23} & Contact distances of \texttt{vsurf\_EWmin} (23).\\ \hline
+
+\texttt{vsurf\_EDmin1} & Lowest hydrophobic energy (1).\\ \hline
+
+\texttt{vsurf\_EDmin2} & Lowest hydrophobic energy (2).\\ \hline
+
+\texttt{vsurf\_EDmin3} & Lowest hydrophobic energy (3).\\ \hline
+
+\texttt{vsurf\_EWmin1} & Lowest hydrophilic energy (1).\\ \hline
+
+\texttt{vsurf\_EWmin2} & Lowest hydrophilic energy (2).\\ \hline
+
+\texttt{vsurf\_EWmin3} & Lowest hydrophilic energy (3).\\ \hline
+
+\texttt{vsurf\_G} & Surface globularity.\\ \hline
+
+\texttt{vsurf\_HB1} & H-bond donor capacity (1).\\ \hline
+
+\texttt{vsurf\_HB2} & H-bond donor capacity (2).\\ \hline
+
+\texttt{vsurf\_HB3} & H-bond donor capacity (3).\\ \hline
+
+\texttt{vsurf\_HB4} & H-bond donor capacity (4).\\ \hline
+
+\texttt{vsurf\_HB5} & H-bond donor capacity (5).\\ \hline
+
+\texttt{vsurf\_HB6} & H-bond donor capacity (6).\\ \hline
+
+\texttt{vsurf\_HB7} & H-bond donor capacity (7).\\ \hline
+
+\texttt{vsurf\_HB8} & H-bond donor capacity (8).\\ \hline
+
+\texttt{vsurf\_HL1} & Hydrophilic-Lipophilic (1).\\ \hline
+
+\texttt{vsurf\_HL2} & Hydrophilic-Lipophilic (2).\\ \hline
+
+\texttt{vsurf\_ID1} & Hydrophobic integy moment (1).\\ \hline
+
+\texttt{vsurf\_ID2} & Hydrophobic integy moment (2).\\ \hline
+
+\texttt{vsurf\_ID3} & Hydrophobic integy moment (3).\\ \hline
+
+\texttt{vsurf\_ID4} & Hydrophobic integy moment (4).\\ \hline
+
+\texttt{vsurf\_ID5} & Hydrophobic integy moment (5).\\ \hline
+
+\texttt{vsurf\_ID6} & Hydrophobic integy moment (6).\\ \hline
+
+\texttt{vsurf\_ID7} & Hydrophobic integy moment (7).\\ \hline
+
+\texttt{vsurf\_ID8} & Hydrophobic integy moment (8).\\ \hline
+
+\texttt{vsurf\_IW1} & Hydrophilic integy moment (1).\\ \hline
+
+\texttt{vsurf\_IW2} & Hydrophilic integy moment (2).\\ \hline
+
+\texttt{vsurf\_IW3} & Hydrophilic integy moment (3).\\ \hline
+
+\texttt{vsurf\_IW4} & Hydrophilic integy moment (4).\\ \hline
+
+\texttt{vsurf\_IW5} & Hydrophilic integy moment (5).\\ \hline
+
+\texttt{vsurf\_IW6} & Hydrophilic integy moment (6).\\ \hline
+
+\texttt{vsurf\_IW7} & Hydrophilic integy moment (7).\\ \hline
+
+\texttt{vsurf\_IW8} & Hydrophilic integy moment (8).\\ \hline
+
+\texttt{vsurf\_R} & Surface rugosity.\\ \hline
+
+\texttt{vsurf\_S} & Interaction field surface area.\\ \hline
+
+\texttt{vsurf\_V} & Interaction field volume.\\ \hline
+
+\texttt{vsurf\_W1} & Hydrophilic volume (1).\\ \hline
+
+\texttt{vsurf\_W2} & Hydrophilic volume (2).\\ \hline
+
+\texttt{vsurf\_W3} & Hydrophilic volume (3).\\ \hline
+
+\texttt{vsurf\_W4} & Hydrophilic volume (4).\\ \hline
+
+\texttt{vsurf\_W5} & Hydrophilic volume (5).\\ \hline
+
+\texttt{vsurf\_W6} & Hydrophilic volume (6).\\ \hline
+
+\texttt{vsurf\_W7} & Hydrophilic volume (7).\\ \hline
+
+\texttt{vsurf\_W8} & Hydrophilic volume (8).\\ \hline
+
+\texttt{vsurf\_Wp1} & Polar volume (1).\\ \hline
+
+\texttt{vsurf\_Wp2} & Polar volume (2).\\ \hline
+
+\texttt{vsurf\_Wp3} & Polar volume (3).\\ \hline
+
+\texttt{vsurf\_Wp4} & Polar volume (4).\\ \hline
+
+\texttt{vsurf\_Wp5} & Polar volume (5).\\ \hline
+
+\texttt{vsurf\_Wp6} & Polar volume (6).\\ \hline
+
+\texttt{vsurf\_Wp7} & Polar volume (7).\\ \hline
+
+\texttt{vsurf\_Wp8} & Polar volume (8).\\ \hline
+
+\texttt{Weight} & Molecular weight (including implicit hydrogens) in 
+atomic mass units with atomic weights taken from \cite{CRC1994}.\\ \hline
+
+\texttt{wienerPath} & Wiener path number: half the sum of all the 
+distance matrix entries as defined in \cite{Balaban1979} and 
+\cite{Wiener1947}.\\ \hline
+
+\texttt{wienerPol} & Wiener polarity number: half the sum of all 
+the distance matrix entries with a value of 3 as defined in 
+\cite{Balaban1979}.\\ \hline
+
+\texttt{zagreb} & Zagreb index: the sum of $d_i^2$ over all heavy 
+atoms $i$.\\ \hline
+
+\end{longtable}
+
+\bibliographystyle{abstract}
+\bibliography{references}
+
+\end{document}
