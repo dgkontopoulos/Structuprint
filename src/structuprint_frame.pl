@@ -197,9 +197,17 @@ END
     # Print the Copyright + GPL stuff.
     say colored( 'VERSION:', 'bold' ) . q{ } . $VERSION;
     say colored(
-'Copyright (C) 2012-15 Kontopoulos D.-G., Vlachakis D., Tsiliki G., Kossida S.',
+'Copyright (C) 2012-16 Kontopoulos D.-G., Vlachakis D., Tsiliki G., Kossida S.',
         'bold'
     );
+
+    say << "END";
+\nIf you use Structuprint, please cite:
+    Kontopoulos DG, Vlachakis D, Tsiliki G, and Kossida S.
+    Structuprint: a scalable and extensible tool for two-dimensional representation of protein surfaces.
+    BMC Struct Biol. 2016 Feb 24;16:4. doi: 10.1186/s12900-016-0055-7. PMID: 26911476
+END
+
     say << "END";
 \n    This program is free software: you can redistribute it and/or
     modify it under the terms of the GNU General Public License, 
@@ -321,7 +329,7 @@ sub directory_handling
         my $full_path = File::Spec->rel2abs($temp_dir);
 
         opendir my $dh, $full_path
-          or die colored( 'ERROR!', 'bold' ) . "\n'$dir' cannot be opened.\n\n";
+          or die colored( 'ERROR!', 'bold' ) . "\n'$temp_dir' cannot be opened.\n\n";
 
         my @files;
 
@@ -1752,9 +1760,17 @@ structuprint_frame -dir './Data/' -prop FCharge -legend_title 'Charge' -width 25
 
 =back
 
+=head1 CITATION
+
+=over 1
+
+Kontopoulos DG, Vlachakis D, Tsiliki G, and Kossida S. B<Structuprint: a scalable and extensible tool for two-dimensional representation of protein surfaces.> BMC Struct Biol. 2016 Feb 24;16:4. doi: 10.1186/s12900-016-0055-7. PMID: 26911476
+
+=back
+
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2012-15 Dimitrios - Georgios Kontopoulos, Dimitrios Vlachakis, Georgia Tsiliki, Sofia Kossida
+Copyright 2012-16 Dimitrios - Georgios Kontopoulos, Dimitrios Vlachakis, Georgia Tsiliki, Sofia Kossida
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
