@@ -24,7 +24,8 @@ install:
 	cp src/images/* $(INSTALLDIR)/images/
 	
 	@printf "\n"
-	@while true; do \
+
+	@while true && [ "$$DEBIAN_FRONTEND" != "noninteractive" ]; do \
 		read -p "Should I install the .desktop file at /usr/share/applications/ ? (y/n) " reply; \
 		if echo "$$reply" | egrep -s '^y|Y'; \
 		then \
@@ -40,7 +41,7 @@ install:
 	done
 
 	@printf "\n"
-	@while true; do \
+	@while true && [ "$$DEBIAN_FRONTEND" != "noninteractive" ]; do \
 		read -p "Should I install the launcher scripts at /usr/bin/ ? (y/n) " reply; \
 		if echo "$$reply" | egrep -s '^y|Y'; \
 		then \
@@ -62,7 +63,7 @@ install:
 	done
 
 	@printf "\n"
-	@while true; do \
+	@while true && [ "$$DEBIAN_FRONTEND" != "noninteractive" ]; do \
 		read -p "Should I install the manpages? (requires pod2man; y/n) " reply; \
 		if echo "$$reply" | egrep -s '^y|Y'; \
 		then \
